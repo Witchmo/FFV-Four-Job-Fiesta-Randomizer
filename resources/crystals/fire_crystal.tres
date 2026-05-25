@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Crystal" format=3 uid="uid://ole4eggfno3o"]
+
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="1_qkqww"]
+[ext_resource type="Resource" uid="uid://bcdewx4oneegc" path="res://resources/jobs/15_beastmaster.tres" id="2_36ynl"]
+[ext_resource type="Script" uid="uid://bonaqm50ccyue" path="res://scripts/crystal.gd" id="2_gbykm"]
+[ext_resource type="Resource" uid="uid://esldfslbx0o0" path="res://resources/jobs/17_geomancer.tres" id="3_vycev"]
+[ext_resource type="Resource" uid="uid://coue3pyqg57gj" path="res://resources/jobs/04_ninja.tres" id="4_dpn0w"]
+[ext_resource type="Resource" uid="uid://vqegand0dpfb" path="res://resources/jobs/07_ranger.tres" id="5_3gucm"]
+[ext_resource type="Resource" uid="uid://brauyc3qia0c8" path="res://resources/jobs/18_bard.tres" id="6_1ghr3"]
+
+[resource]
+script = ExtResource("2_gbykm")
+element = 2
+jobs = Array[ExtResource("1_qkqww")]([ExtResource("2_36ynl"), ExtResource("3_vycev"), ExtResource("4_dpn0w"), ExtResource("5_3gucm"), ExtResource("6_1ghr3")])
+metadata/_custom_type_script = "uid://bonaqm50ccyue"

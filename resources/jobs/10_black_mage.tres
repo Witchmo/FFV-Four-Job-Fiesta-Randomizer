@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="Job" format=3 uid="uid://b07ifkucbuhrg"]
+
+[ext_resource type="Resource" uid="uid://df5p5wosm7bny" path="res://resources/armor_loadouts/nothing.tres" id="1_y70e4"]
+[ext_resource type="Script" uid="uid://k84t6gc1wicp" path="res://scripts/character_armor.gd" id="2_wwnwi"]
+[ext_resource type="Script" uid="uid://btcpr4h1wb53m" path="res://scripts/command_loadout.gd" id="3_q3wtv"]
+[ext_resource type="Resource" uid="uid://b5irpqvpwnfna" path="res://resources/commands/black_lv6.tres" id="4_y70e4"]
+[ext_resource type="Resource" uid="uid://td8ywh5urmbn" path="res://resources/commands/fight.tres" id="5_bcixw"]
+[ext_resource type="Resource" uid="uid://b7x0pctwnkh7h" path="res://resources/commands/nothing.tres" id="6_eh4f4"]
+[ext_resource type="Resource" uid="uid://bbcelbjva5sc4" path="res://resources/commands/item.tres" id="7_4mu1y"]
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="8_k3ggg"]
+[ext_resource type="Texture2D" uid="uid://bx1kyrgbh3ee6" path="res://sprites/characters/bartz/11.png" id="9_wwnwi"]
+[ext_resource type="Texture2D" uid="uid://cmelaxoclbqpf" path="res://sprites/characters/faris/12.png" id="10_q3wtv"]
+[ext_resource type="Texture2D" uid="uid://b11t5a4ohyh74" path="res://sprites/characters/galuf/11.png" id="11_k306w"]
+[ext_resource type="Texture2D" uid="uid://bou5pa1b1454i" path="res://sprites/characters/krile/11.png" id="12_bcixw"]
+[ext_resource type="Texture2D" uid="uid://bd8yc3wrmsxb0" path="res://sprites/characters/lenna/11.png" id="13_eh4f4"]
+[ext_resource type="Script" uid="uid://dhb15ko7vprgw" path="res://scripts/job_sprites.gd" id="14_fka0e"]
+[ext_resource type="Script" uid="uid://b61ke1lic3no2" path="res://scripts/stat_bonuses.gd" id="15_yavjg"]
+[ext_resource type="Resource" uid="uid://bc0mbt25j0pek" path="res://resources/weapon_loadouts/dagger.tres" id="16_y70e4"]
+[ext_resource type="Resource" uid="uid://da4wwmf1071yt" path="res://resources/weapon_loadouts/fists.tres" id="17_gpbsp"]
+[ext_resource type="Resource" uid="uid://4bnsex1qpues" path="res://resources/weapon_loadouts/knife.tres" id="18_wwnwi"]
+[ext_resource type="Script" uid="uid://cwab5dbfpfmpu" path="res://scripts/character_weapons.gd" id="19_p5xnq"]
+
+[sub_resource type="Resource" id="Resource_pys3t"]
+script = ExtResource("2_wwnwi")
+bartz = ExtResource("1_y70e4")
+lenna = ExtResource("1_y70e4")
+galuf = ExtResource("1_y70e4")
+faris = ExtResource("1_y70e4")
+krile = ExtResource("1_y70e4")
+metadata/_custom_type_script = "uid://k84t6gc1wicp"
+
+[sub_resource type="Resource" id="Resource_h0huf"]
+script = ExtResource("3_q3wtv")
+slot_1 = ExtResource("4_y70e4")
+slot_2 = ExtResource("5_bcixw")
+slot_3 = ExtResource("6_eh4f4")
+slot_4 = ExtResource("7_4mu1y")
+metadata/_custom_type_script = "uid://btcpr4h1wb53m"
+
+[sub_resource type="Resource" id="Resource_vvhrg"]
+script = ExtResource("14_fka0e")
+bartz = ExtResource("9_wwnwi")
+lenna = ExtResource("13_eh4f4")
+galuf = ExtResource("11_k306w")
+faris = ExtResource("10_q3wtv")
+krile = ExtResource("12_bcixw")
+metadata/_custom_type_script = "uid://dhb15ko7vprgw"
+
+[sub_resource type="Resource" id="Resource_7wk02"]
+script = ExtResource("15_yavjg")
+strength = 15
+agility = 24
+stamina = 22
+magic = 55
+metadata/_custom_type_script = "uid://b61ke1lic3no2"
+
+[sub_resource type="Resource" id="Resource_lvv6r"]
+script = ExtResource("19_p5xnq")
+bartz = ExtResource("16_y70e4")
+lenna = ExtResource("18_wwnwi")
+galuf = ExtResource("17_gpbsp")
+faris = ExtResource("16_y70e4")
+krile = ExtResource("17_gpbsp")
+metadata/_custom_type_script = "uid://cwab5dbfpfmpu"
+
+[resource]
+script = ExtResource("8_k3ggg")
+id = 10
+stats = SubResource("Resource_7wk02")
+sprites = SubResource("Resource_vvhrg")
+commands = SubResource("Resource_h0huf")
+weapons = SubResource("Resource_lvv6r")
+armor = SubResource("Resource_pys3t")
+metadata/_custom_type_script = "uid://6hvcpweoehnf"

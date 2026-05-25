@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterBase" format=3 uid="uid://duba4n3mp83nv"]
+
+[ext_resource type="Script" uid="uid://bdwwj7rrgt2u7" path="res://scripts/character_base.gd" id="1_4b8av"]
+[ext_resource type="Script" uid="uid://b61ke1lic3no2" path="res://scripts/stat_bonuses.gd" id="2_dnwi2"]
+
+[sub_resource type="Resource" id="Resource_ihstm"]
+script = ExtResource("2_dnwi2")
+strength = 1
+agility = 2
+stamina = 1
+magic = 4
+metadata/_custom_type_script = "uid://b61ke1lic3no2"
+
+[resource]
+script = ExtResource("1_4b8av")
+index = 1
+level = 1
+hp_mod = 20
+mp = 5
+stats = SubResource("Resource_ihstm")
+metadata/_custom_type_script = "uid://bdwwj7rrgt2u7"

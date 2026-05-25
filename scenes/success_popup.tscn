@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://mak5dja3lo42"]
+
+[ext_resource type="Script" uid="uid://cwp1nv7xoal70" path="res://scripts/success_popup.gd" id="1_o5x4f"]
+[ext_resource type="Theme" uid="uid://d320cc11vt4ny" path="res://themes/main_theme.tres" id="2_lnev3"]
+
+[node name="SuccessPopup" type="Control" unique_id=2054727458]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5x4f")
+duation_frames = 60
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=57827080]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1495901877]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -20.0
+offset_right = 39.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_lnev3")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1779208360]
+layout_mode = 2
+theme = ExtResource("2_lnev3")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=1959970707]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme = ExtResource("2_lnev3")
+text = "Success"

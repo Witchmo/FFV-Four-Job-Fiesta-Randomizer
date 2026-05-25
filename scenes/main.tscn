@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://iog6na1kojpk"]
+
+[ext_resource type="Script" uid="uid://b16oxvlnw7isx" path="res://scripts/fiesta_randomizer.gd" id="1_trceg"]
+[ext_resource type="Script" uid="uid://bonaqm50ccyue" path="res://scripts/crystal.gd" id="2_a8y0u"]
+[ext_resource type="Resource" uid="uid://u1161vb6lf1" path="res://resources/crystals/wind_crystal.tres" id="3_jkv2x"]
+[ext_resource type="Resource" uid="uid://gl2k0vffclu3" path="res://resources/crystals/water_crystal.tres" id="4_jbj1t"]
+[ext_resource type="Resource" uid="uid://ole4eggfno3o" path="res://resources/crystals/fire_crystal.tres" id="5_muem4"]
+[ext_resource type="Resource" uid="uid://dtgv4qbw000do" path="res://resources/crystals/earth_crystal.tres" id="6_dp3eg"]
+[ext_resource type="Resource" uid="uid://c0msfa7ptcb1s" path="res://resources/jobs/21_freelancer.tres" id="7_0ld40"]
+[ext_resource type="Script" uid="uid://bdwwj7rrgt2u7" path="res://scripts/character_base.gd" id="8_gqmmt"]
+[ext_resource type="Resource" uid="uid://besajijudyu10" path="res://resources/characters/bartz.tres" id="9_yc10j"]
+[ext_resource type="Resource" uid="uid://duba4n3mp83nv" path="res://resources/characters/lenna.tres" id="10_jscy8"]
+[ext_resource type="Resource" uid="uid://b5oykcwwktfr6" path="res://resources/characters/galuf.tres" id="11_pm3ni"]
+[ext_resource type="Resource" uid="uid://b2m4e2ba8j1ut" path="res://resources/characters/faris.tres" id="12_y6deb"]
+[ext_resource type="PackedScene" uid="uid://8eh8254ivt5q" path="res://scenes/gui.tscn" id="13_og1vs"]
+
+[node name="FiestaRandomizer" type="Node" unique_id=318480021]
+script = ExtResource("1_trceg")
+crystals = Dictionary[int, ExtResource("2_a8y0u")]({
+0: ExtResource("3_jkv2x"),
+1: ExtResource("4_jbj1t"),
+2: ExtResource("5_muem4"),
+3: ExtResource("6_dp3eg")
+})
+freelancer = ExtResource("7_0ld40")
+characters = Array[ExtResource("8_gqmmt")]([ExtResource("9_yc10j"), ExtResource("10_jscy8"), ExtResource("11_pm3ni"), ExtResource("12_y6deb")])
+
+[node name="GUI" parent="." unique_id=1106996359 instance=ExtResource("13_og1vs")]
+
+[connection signal="jobs_selected" from="." to="GUI" method="_on_fiesta_randomizer_jobs_selected"]
+[connection signal="patch_created" from="." to="GUI" method="_on_fiesta_randomizer_patch_created"]
+[connection signal="request_create_patch" from="GUI" to="." method="_on_gui_request_create_patch"]
+[connection signal="request_randomization" from="GUI" to="." method="_on_gui_request_randomization"]

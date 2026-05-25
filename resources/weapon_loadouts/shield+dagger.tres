@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponLoadout" format=3 uid="uid://bw35125akpcs2"]
+
+[ext_resource type="Script" uid="uid://s3yu87j2f6bx" path="res://scripts/weapon_loadout.gd" id="1_jdesm"]
+[ext_resource type="Resource" uid="uid://cgpej5mystbtq" path="res://resources/equipment/leather_shield.tres" id="2_x3m05"]
+[ext_resource type="Resource" uid="uid://5f0npk5g8qnw" path="res://resources/equipment/dagger.tres" id="3_3luqg"]
+[ext_resource type="Resource" uid="uid://bd6gta1o3b56a" path="res://resources/equipment/empty_weapon.tres" id="4_v7ro4"]
+
+[resource]
+script = ExtResource("1_jdesm")
+shield = ExtResource("2_x3m05")
+weapon_1 = ExtResource("3_3luqg")
+weapon_2 = ExtResource("4_v7ro4")
+metadata/_custom_type_script = "uid://s3yu87j2f6bx"

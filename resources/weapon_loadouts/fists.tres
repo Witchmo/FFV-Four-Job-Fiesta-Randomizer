@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponLoadout" format=3 uid="uid://da4wwmf1071yt"]
+
+[ext_resource type="Script" uid="uid://s3yu87j2f6bx" path="res://scripts/weapon_loadout.gd" id="1_25yfr"]
+[ext_resource type="Resource" uid="uid://bd6gta1o3b56a" path="res://resources/equipment/empty_weapon.tres" id="2_lmfk4"]
+[ext_resource type="Resource" uid="uid://nxtw7gbnep3i" path="res://resources/equipment/fist.tres" id="3_a3i6g"]
+[ext_resource type="Resource" uid="uid://ds5b0c2wjs52d" path="res://resources/equipment/fist_offhand.tres" id="4_d1dgf"]
+
+[resource]
+script = ExtResource("1_25yfr")
+shield = ExtResource("2_lmfk4")
+weapon_1 = ExtResource("3_a3i6g")
+weapon_2 = ExtResource("4_d1dgf")
+metadata/_custom_type_script = "uid://s3yu87j2f6bx"

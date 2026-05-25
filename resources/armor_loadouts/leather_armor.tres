@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ArmorLoadout" format=3 uid="uid://cb5chjhgr4lg4"]
+
+[ext_resource type="Resource" uid="uid://ctl4xs4ajmd7i" path="res://resources/equipment/empty_armor.tres" id="1_uc5to"]
+[ext_resource type="Resource" uid="uid://bx5m0gvgya7fo" path="res://resources/equipment/leather_armor.tres" id="2_87rk3"]
+[ext_resource type="Script" uid="uid://bb38458nt0mk7" path="res://scripts/armor_loadout.gd" id="3_pyiri"]
+
+[resource]
+script = ExtResource("3_pyiri")
+head = ExtResource("1_uc5to")
+body = ExtResource("2_87rk3")
+accessory = ExtResource("1_uc5to")
+metadata/_custom_type_script = "uid://bb38458nt0mk7"

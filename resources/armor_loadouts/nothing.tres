@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ArmorLoadout" format=3 uid="uid://df5p5wosm7bny"]
+
+[ext_resource type="Resource" uid="uid://ctl4xs4ajmd7i" path="res://resources/equipment/empty_armor.tres" id="1_c3q5i"]
+[ext_resource type="Script" uid="uid://bb38458nt0mk7" path="res://scripts/armor_loadout.gd" id="2_3pwtc"]
+
+[resource]
+script = ExtResource("2_3pwtc")
+head = ExtResource("1_c3q5i")
+body = ExtResource("1_c3q5i")
+accessory = ExtResource("1_c3q5i")
+metadata/_custom_type_script = "uid://bb38458nt0mk7"

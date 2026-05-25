@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Crystal" format=3 uid="uid://gl2k0vffclu3"]
+
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="1_eexs5"]
+[ext_resource type="Script" uid="uid://bonaqm50ccyue" path="res://scripts/crystal.gd" id="2_kkp8q"]
+[ext_resource type="Resource" uid="uid://bphlnkvqc7hf5" path="res://resources/jobs/14_red_mage.tres" id="2_toil6"]
+[ext_resource type="Resource" uid="uid://dqvq3dnx8llr1" path="res://resources/jobs/11_time_mage.tres" id="3_2k2ee"]
+[ext_resource type="Resource" uid="uid://chy653dyikvvj" path="res://resources/jobs/12_summoner.tres" id="4_sql76"]
+[ext_resource type="Resource" uid="uid://c2kx8uebnff40" path="res://resources/jobs/06_berserker.tres" id="5_d8tvq"]
+[ext_resource type="Resource" uid="uid://bhkpwx83o5wp4" path="res://resources/jobs/08_mystic_knight.tres" id="6_jatyq"]
+[ext_resource type="Resource" uid="uid://oswvgm8vj1fu" path="res://resources/jobs/20_mime.tres" id="7_f8euh"]
+
+[resource]
+script = ExtResource("2_kkp8q")
+element = 1
+jobs = Array[ExtResource("1_eexs5")]([ExtResource("2_toil6"), ExtResource("3_2k2ee"), ExtResource("4_sql76"), ExtResource("5_d8tvq"), ExtResource("6_jatyq"), ExtResource("7_f8euh")])
+metadata/_custom_type_script = "uid://bonaqm50ccyue"

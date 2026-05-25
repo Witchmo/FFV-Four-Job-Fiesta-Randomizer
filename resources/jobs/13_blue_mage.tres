@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="Job" format=3 uid="uid://cyc6j3hep3p2l"]
+
+[ext_resource type="Resource" uid="uid://cb5chjhgr4lg4" path="res://resources/armor_loadouts/leather_armor.tres" id="1_f5fim"]
+[ext_resource type="Script" uid="uid://k84t6gc1wicp" path="res://scripts/character_armor.gd" id="2_1f1j4"]
+[ext_resource type="Script" uid="uid://btcpr4h1wb53m" path="res://scripts/command_loadout.gd" id="3_i6gmo"]
+[ext_resource type="Resource" uid="uid://dko0dolkp5t52" path="res://resources/commands/blue.tres" id="4_f5fim"]
+[ext_resource type="Resource" uid="uid://td8ywh5urmbn" path="res://resources/commands/fight.tres" id="5_qswa5"]
+[ext_resource type="Resource" uid="uid://b7x0pctwnkh7h" path="res://resources/commands/nothing.tres" id="6_ur6ks"]
+[ext_resource type="Resource" uid="uid://bbcelbjva5sc4" path="res://resources/commands/item.tres" id="7_rerir"]
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="8_wtyd3"]
+[ext_resource type="Texture2D" uid="uid://dapbgfuoyalgi" path="res://sprites/characters/bartz/14.png" id="9_1f1j4"]
+[ext_resource type="Texture2D" uid="uid://55f1vkv6q1yw" path="res://sprites/characters/faris/15.png" id="10_i6gmo"]
+[ext_resource type="Texture2D" uid="uid://b0q5verrof7jm" path="res://sprites/characters/galuf/14.png" id="11_uo4ql"]
+[ext_resource type="Texture2D" uid="uid://dc6s8ek4qblrk" path="res://sprites/characters/krile/14.png" id="12_qswa5"]
+[ext_resource type="Texture2D" uid="uid://vhvnkv84h6c1" path="res://sprites/characters/lenna/14.png" id="13_ur6ks"]
+[ext_resource type="Script" uid="uid://dhb15ko7vprgw" path="res://scripts/job_sprites.gd" id="14_txmbg"]
+[ext_resource type="Script" uid="uid://b61ke1lic3no2" path="res://scripts/stat_bonuses.gd" id="15_vgtti"]
+[ext_resource type="Resource" uid="uid://cqb0d3svjieb0" path="res://resources/weapon_loadouts/broadsword.tres" id="16_0qfse"]
+[ext_resource type="Resource" uid="uid://bw35125akpcs2" path="res://resources/weapon_loadouts/shield+dagger.tres" id="17_3mfkn"]
+[ext_resource type="Resource" uid="uid://da4wwmf1071yt" path="res://resources/weapon_loadouts/fists.tres" id="18_wb8qj"]
+[ext_resource type="Resource" uid="uid://4bnsex1qpues" path="res://resources/weapon_loadouts/knife.tres" id="19_bqtat"]
+[ext_resource type="Script" uid="uid://cwab5dbfpfmpu" path="res://scripts/character_weapons.gd" id="20_2k87q"]
+
+[sub_resource type="Resource" id="Resource_ia87k"]
+script = ExtResource("2_1f1j4")
+bartz = ExtResource("1_f5fim")
+lenna = ExtResource("1_f5fim")
+galuf = ExtResource("1_f5fim")
+faris = ExtResource("1_f5fim")
+krile = ExtResource("1_f5fim")
+metadata/_custom_type_script = "uid://k84t6gc1wicp"
+
+[sub_resource type="Resource" id="Resource_xuhq5"]
+script = ExtResource("3_i6gmo")
+slot_1 = ExtResource("4_f5fim")
+slot_2 = ExtResource("5_qswa5")
+slot_3 = ExtResource("6_ur6ks")
+slot_4 = ExtResource("7_rerir")
+metadata/_custom_type_script = "uid://btcpr4h1wb53m"
+
+[sub_resource type="Resource" id="Resource_roxuv"]
+script = ExtResource("14_txmbg")
+bartz = ExtResource("9_1f1j4")
+lenna = ExtResource("13_ur6ks")
+galuf = ExtResource("11_uo4ql")
+faris = ExtResource("10_i6gmo")
+krile = ExtResource("12_qswa5")
+metadata/_custom_type_script = "uid://dhb15ko7vprgw"
+
+[sub_resource type="Resource" id="Resource_u6i8l"]
+script = ExtResource("15_vgtti")
+strength = 16
+agility = 25
+stamina = 27
+magic = 47
+metadata/_custom_type_script = "uid://b61ke1lic3no2"
+
+[sub_resource type="Resource" id="Resource_r75ku"]
+script = ExtResource("20_2k87q")
+bartz = ExtResource("16_0qfse")
+lenna = ExtResource("19_bqtat")
+galuf = ExtResource("18_wb8qj")
+faris = ExtResource("17_3mfkn")
+krile = ExtResource("18_wb8qj")
+metadata/_custom_type_script = "uid://cwab5dbfpfmpu"
+
+[resource]
+script = ExtResource("8_wtyd3")
+id = 13
+stats = SubResource("Resource_u6i8l")
+sprites = SubResource("Resource_roxuv")
+commands = SubResource("Resource_xuhq5")
+weapons = SubResource("Resource_r75ku")
+armor = SubResource("Resource_ia87k")
+metadata/_custom_type_script = "uid://6hvcpweoehnf"

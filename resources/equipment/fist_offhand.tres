@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://ds5b0c2wjs52d"]
+
+[ext_resource type="Script" uid="uid://suus2rb68xrc" path="res://scripts/equipment.gd" id="1_7ktxl"]
+
+[resource]
+script = ExtResource("1_7ktxl")
+id = 1
+stat_mods = Array[int]([0, 0, 0, 0, 0, 0])
+metadata/_custom_type_script = "uid://suus2rb68xrc"

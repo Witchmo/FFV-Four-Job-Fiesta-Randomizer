@@ -1,0 +1,330 @@
+[gd_scene format=3 uid="uid://iog6na1kojpk"]
+
+[ext_resource type="Theme" uid="uid://d320cc11vt4ny" path="res://new_theme.tres" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://bmpsfl273n00e" path="res://randomizer_ui.gd" id="1_0ytqx"]
+[ext_resource type="Script" uid="uid://b1c3gwlviofwg" path="res://job_spoiler.gd" id="2_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://celrqsb7vu6r5" path="res://sprites/bartz/00.png" id="2_kbped"]
+[ext_resource type="Script" uid="uid://djawxu5pl152e" path="res://options_select.gd" id="3_8jbwv"]
+[ext_resource type="Texture2D" uid="uid://cwxgdi7ns67c7" path="res://sprites/lenna/00.png" id="3_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://iy62t0337up2" path="res://sprites/faris/01.png" id="4_iy58a"]
+[ext_resource type="Texture2D" uid="uid://c5y2t5exmm03n" path="res://sprites/galuf/00.png" id="5_iy58a"]
+[ext_resource type="Texture2D" uid="uid://i0w0brtejhh3" path="res://sprites/krile/00.png" id="7_6a6wx"]
+[ext_resource type="Texture2D" uid="uid://diw0iig36b1eu" path="res://finger.png" id="8_6a6wx"]
+[ext_resource type="Script" uid="uid://b076ooy0lew7e" path="res://menu_finger.gd" id="9_sky72"]
+[ext_resource type="Script" uid="uid://b16oxvlnw7isx" path="res://fiesta_randomizer.gd" id="11_xvdhi"]
+[ext_resource type="Script" uid="uid://bonaqm50ccyue" path="res://crystal.gd" id="12_oq4si"]
+[ext_resource type="Resource" uid="uid://u1161vb6lf1" path="res://resources/crystals/wind_crystal.tres" id="13_m4egf"]
+[ext_resource type="Resource" uid="uid://gl2k0vffclu3" path="res://resources/crystals/water_crystal.tres" id="14_pi4e7"]
+[ext_resource type="Resource" uid="uid://ole4eggfno3o" path="res://resources/crystals/fire_crystal.tres" id="15_kuuv8"]
+[ext_resource type="Resource" uid="uid://dtgv4qbw000do" path="res://resources/crystals/earth_crystal.tres" id="16_ou021"]
+[ext_resource type="Resource" uid="uid://c0msfa7ptcb1s" path="res://resources/jobs/21_freelancer.tres" id="17_oq4si"]
+[ext_resource type="Script" uid="uid://bdwwj7rrgt2u7" path="res://character_base.gd" id="18_3fl80"]
+[ext_resource type="Resource" uid="uid://besajijudyu10" path="res://resources/characters/bartz.tres" id="19_8jbwv"]
+[ext_resource type="Resource" uid="uid://duba4n3mp83nv" path="res://resources/characters/lenna.tres" id="20_v61lp"]
+[ext_resource type="Resource" uid="uid://b5oykcwwktfr6" path="res://resources/characters/galuf.tres" id="21_dgp6r"]
+[ext_resource type="Resource" uid="uid://b2m4e2ba8j1ut" path="res://resources/characters/faris.tres" id="22_858bn"]
+
+[node name="GUI" type="Control" unique_id=1941484940 node_paths=PackedStringArray("job_pool", "job_spoiler")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ytqx")
+job_pool = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool")
+job_spoiler = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=588558473]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=504022657]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0fbet")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=89233555]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_0fbet")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=160945322]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=197767010]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1199432593]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1769187102]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=830887006]
+custom_minimum_size = Vector2(278, 260)
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Options" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=695054812]
+custom_minimum_size = Vector2(278, 126)
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+script = ExtResource("3_8jbwv")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options" unique_id=1488328480]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer" unique_id=67574109]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=844760432]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "OPTIONS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=1330509414]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="IsIncludeFreelancerCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1491342445]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "INCLUDE FREELANCER"
+
+[node name="IsOneJobFiestaCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=106904136]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "ONE JOB FIESTA"
+
+[node name="IsFullJobPoolCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1487939267]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "FULL JOB POOL"
+
+[node name="AllowDuplicates" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=553403571]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "ALLOW DUPLICATES"
+
+[node name="JobPool" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1554885082]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool" unique_id=1806073456]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer" unique_id=1544529100]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer" unique_id=86782689]
+layout_mode = 2
+text = "JOB POOL"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer" unique_id=950700356]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+columns = 2
+
+[node name="WindCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=269857080]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "WIND CRYSTAL"
+
+[node name="WaterCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1602537914]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "WATER CRYSTAL"
+
+[node name="FireCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1484355898]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "FIRE CRYSTAL"
+
+[node name="EarthCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=69568525]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "EARTH CRYSTAL"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1081594180]
+custom_minimum_size = Vector2(248, 228)
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="JobSpoiler" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=486094764 node_paths=PackedStringArray("container", "bartz", "lenna", "galuf", "faris", "krile")]
+custom_minimum_size = Vector2(248, 68)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("2_fj5cn")
+container = NodePath("MarginContainer")
+bartz = NodePath("MarginContainer/HBoxContainer/Bartz/TextureRect")
+lenna = NodePath("MarginContainer/HBoxContainer/Lenna/TextureRect")
+galuf = NodePath("MarginContainer/HBoxContainer/Galuf/TextureRect")
+faris = NodePath("MarginContainer/HBoxContainer/Faris/TextureRect")
+krile = NodePath("MarginContainer/HBoxContainer/Krile/TextureRect")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" unique_id=1828675758]
+visible = false
+custom_minimum_size = Vector2(242, 62)
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer" unique_id=729258656]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Bartz" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=165298479]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz" unique_id=289879883]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "BARTZ"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz" unique_id=79732706]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("2_kbped")
+
+[node name="Lenna" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=1207296048]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna" unique_id=1159192155]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "LENNA"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna" unique_id=149836110]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_fj5cn")
+
+[node name="Galuf" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=2223481]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf" unique_id=2119101144]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "GALUF"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf" unique_id=1825549561]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_iy58a")
+
+[node name="Faris" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=337138686]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris" unique_id=916518163]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "FARIS"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris" unique_id=560602326]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_iy58a")
+
+[node name="Krile" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=166588695]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Krile" unique_id=1485332397]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "KRILE"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Krile" unique_id=2118693953]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_6a6wx")
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=225929430]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "TOGGLE SPOILER"
+
+[node name="Process" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=657306721]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme = ExtResource("1_0fbet")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process" unique_id=1460084433]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer" unique_id=1944099751]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_0fbet")
+
+[node name="Randomize" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer" unique_id=2126919981]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "RANDOMIZE"
+
+[node name="CreatePatch" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer" unique_id=240580905]
+layout_mode = 2
+theme = ExtResource("1_0fbet")
+text = "CREATE PATCH"
+
+[node name="Finger" type="TextureRect" parent="." unique_id=1160559153]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 74.0
+offset_right = 64.0
+offset_bottom = 90.0
+texture = ExtResource("8_6a6wx")
+script = ExtResource("9_sky72")
+
+[node name="FiestaRandomizer" type="Node" parent="." unique_id=318480021]
+script = ExtResource("11_xvdhi")
+crystals = Dictionary[int, ExtResource("12_oq4si")]({
+0: ExtResource("13_m4egf"),
+1: ExtResource("14_pi4e7"),
+2: ExtResource("15_kuuv8"),
+3: ExtResource("16_ou021")
+})
+freelancer = ExtResource("17_oq4si")
+characters = Array[ExtResource("18_3fl80")]([ExtResource("19_8jbwv"), ExtResource("20_v61lp"), ExtResource("21_dgp6r"), ExtResource("22_858bn")])
+
+[connection signal="request_randomization" from="." to="FiestaRandomizer" method="_on_gui_request_randomization"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer/IsFullJobPoolCheckBox" to="." method="_on_allow_duplicates_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Button" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/Randomize" to="." method="_on_randomize_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/CreatePatch" to="." method="_on_create_patch_pressed"]
+[connection signal="jobs_selected" from="FiestaRandomizer" to="." method="_on_fiesta_randomizer_jobs_selected"]

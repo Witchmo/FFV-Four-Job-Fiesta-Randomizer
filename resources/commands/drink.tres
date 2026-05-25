@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="JobCommand" format=3 uid="uid://dmvrgd2jj4fjy"]
+
+[ext_resource type="Script" uid="uid://bld30hpt3ijr2" path="res://scripts/job_command.gd" id="1_8wsj3"]
+
+[resource]
+script = ExtResource("1_8wsj3")
+id = 32
+metadata/_custom_type_script = "uid://bld30hpt3ijr2"

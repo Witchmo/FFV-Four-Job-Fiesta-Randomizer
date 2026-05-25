@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Crystal" format=3 uid="uid://dtgv4qbw000do"]
+
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="1_r5nwb"]
+[ext_resource type="Resource" uid="uid://bpw00fextg7rn" path="res://resources/jobs/03_dragoon.tres" id="2_f7ill"]
+[ext_resource type="Script" uid="uid://bonaqm50ccyue" path="res://scripts/crystal.gd" id="2_s4et2"]
+[ext_resource type="Resource" uid="uid://npslqisd6ya1" path="res://resources/jobs/19_dancer.tres" id="3_vmmya"]
+[ext_resource type="Resource" uid="uid://bpy3bvt6pbols" path="res://resources/jobs/05_samurai.tres" id="4_1a1t4"]
+[ext_resource type="Resource" uid="uid://dr8jp5iobw1pq" path="res://resources/jobs/16_chemist.tres" id="5_4vtyr"]
+
+[resource]
+script = ExtResource("2_s4et2")
+element = 3
+jobs = Array[ExtResource("1_r5nwb")]([ExtResource("2_f7ill"), ExtResource("3_vmmya"), ExtResource("4_1a1t4"), ExtResource("5_4vtyr")])
+metadata/_custom_type_script = "uid://bonaqm50ccyue"
