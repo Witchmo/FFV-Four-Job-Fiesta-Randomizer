@@ -1,9 +1,10 @@
 class_name IPSGenerator
 extends RefCounted
 
-var _rom_offsets: Array = [0x117001, 0x117051, 0x1170A1, 0x1170F1]
+var _rom_offsets: Array[int] = [0x117001, 0x117051, 0x1170A1, 0x1170F1]
 var _characters: Array[CharacterBase]
 var _jobs: Array[Job]
+var _no_job_change_offset: int = 0x2B2A3
 
 
 func _init(characters: Array[CharacterBase], jobs: Array[Job]) -> void:
@@ -35,6 +36,8 @@ func _build_ips_patch() -> PackedByteArray:
 		var character_data: CharacterData = CharacterData.new(_characters[i], _jobs[i])
 		
 		_write_ips_record(w, _rom_offsets[i], _build_character_data(character_data))
+		
+	_apply_no_job_change(w)
 		
 	for c in "EOF":
 		w.write_u8(c.unicode_at(0))
@@ -106,3 +109,9 @@ func _build_character_data(character: CharacterData) -> PackedByteArray:
 	w.write_u8(character.attack)
 	
 	return w.data
+	
+	
+func _apply_no_job_change(writer: BinaryWriter) -> void:
+	writer.write_u24_be(_no_job_change_offset)
+	writer.write_u16_be(0x02)
+	writer.write_u16_be(0x80DF)
