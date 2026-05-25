@@ -97,7 +97,6 @@ theme = ExtResource("2_e23it")
 
 [node name="IsOneJobFiestaCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=726721138]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 theme = ExtResource("2_e23it")
 text = "ONE JOB FIESTA"
@@ -105,7 +104,6 @@ flat = true
 
 [node name="IsFullJobPoolCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1231629365]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 theme = ExtResource("2_e23it")
 text = "FULL JOB POOL"
@@ -114,7 +112,6 @@ flat = true
 [node name="AllowDuplicates" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1367263494]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 text = "ALLOW DUPLICATES"
 flat = true
@@ -122,7 +119,6 @@ flat = true
 [node name="IsIncludeFreelancerCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=143666990]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 theme = ExtResource("2_e23it")
 text = "INCLUDE FREELANCER"
@@ -153,7 +149,6 @@ columns = 2
 
 [node name="WindCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1991678178]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 button_pressed = true
 text = "WIND CRYSTAL"
@@ -161,7 +156,6 @@ flat = true
 
 [node name="WaterCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1086507035]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 button_pressed = true
 text = "WATER CRYSTAL"
@@ -169,7 +163,6 @@ flat = true
 
 [node name="FireCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1651631626]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 button_pressed = true
 text = "FIRE CRYSTAL"
@@ -177,7 +170,6 @@ flat = true
 
 [node name="EarthCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1537173537]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 button_pressed = true
 text = "EARTH CRYSTAL"
@@ -318,9 +310,9 @@ text = "CREATE PATCH"
 [node name="Finger" type="TextureRect" parent="." unique_id=1149485131]
 layout_mode = 0
 offset_left = 48.0
-offset_top = 74.0
+offset_top = 77.0
 offset_right = 64.0
-offset_bottom = 90.0
+offset_bottom = 93.0
 texture = ExtResource("10_fxds3")
 script = ExtResource("11_s1fa6")
 
