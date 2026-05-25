@@ -12,10 +12,6 @@ extends PanelContainer
 @onready var is_use_earth: CheckBox = %EarthCrystalCheckBox
 
 
-func _ready() -> void:
-	is_one_job_fiesta.grab_focus()
-
-
 func get_randomizer_command() -> RandomizerCommand:
 	var command: RandomizerCommand = RandomizerCommand.new()
 	

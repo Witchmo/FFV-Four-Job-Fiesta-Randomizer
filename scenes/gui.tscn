@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://c5y2t5exmm03n" path="res://sprites/characters/galuf/00.png" id="7_ia15a"]
 [ext_resource type="Texture2D" uid="uid://iy62t0337up2" path="res://sprites/characters/faris/01.png" id="8_nf4fc"]
 [ext_resource type="Texture2D" uid="uid://i0w0brtejhh3" path="res://sprites/characters/krile/00.png" id="9_vwnqe"]
-[ext_resource type="Texture2D" uid="uid://diw0iig36b1eu" path="res://sprites/gui/finger.png" id="10_fxds3"]
-[ext_resource type="Script" uid="uid://b076ooy0lew7e" path="res://scripts/menu_finger.gd" id="11_s1fa6"]
 
 [node name="GUI" type="Control" unique_id=1106996359 node_paths=PackedStringArray("job_spoiler", "options_select", "create_patch_button")]
 layout_mode = 3
@@ -98,6 +96,8 @@ theme = ExtResource("2_e23it")
 [node name="IsOneJobFiestaCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=726721138]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "RESTRICTS ALL CHARACTERS TO THE SAME JOB"
+focus_mode = 0
 theme = ExtResource("2_e23it")
 text = "ONE JOB FIESTA"
 flat = true
@@ -105,6 +105,9 @@ flat = true
 [node name="IsFullJobPoolCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1231629365]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "IF SELECTED, THE RANDOMIZER CAN SELECT A JOB 
+FROM A CRYSTAL MORE THAN ONCE"
+focus_mode = 0
 theme = ExtResource("2_e23it")
 text = "FULL JOB POOL"
 flat = true
@@ -113,6 +116,8 @@ flat = true
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+tooltip_text = "ALLOWS JOBS TO BE SELECTED MORE THAN ONCE"
+focus_mode = 0
 text = "ALLOW DUPLICATES"
 flat = true
 
@@ -120,6 +125,8 @@ flat = true
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+tooltip_text = "INCLUDES THE FREELANCER INTO THE RANDOM JOB POOL"
+focus_mode = 0
 theme = ExtResource("2_e23it")
 text = "INCLUDE FREELANCER"
 flat = true
@@ -150,6 +157,7 @@ columns = 2
 [node name="WindCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1991678178]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 button_pressed = true
 text = "WIND CRYSTAL"
 flat = true
@@ -157,6 +165,7 @@ flat = true
 [node name="WaterCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1086507035]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 button_pressed = true
 text = "WATER CRYSTAL"
 flat = true
@@ -164,6 +173,7 @@ flat = true
 [node name="FireCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1651631626]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 button_pressed = true
 text = "FIRE CRYSTAL"
 flat = true
@@ -171,6 +181,7 @@ flat = true
 [node name="EarthCrystalCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/JobPool/MarginContainer/VBoxContainer/GridContainer" unique_id=1537173537]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 button_pressed = true
 text = "EARTH CRYSTAL"
 flat = true
@@ -277,6 +288,7 @@ texture = ExtResource("9_vwnqe")
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 size_flags_horizontal = 8
+focus_mode = 0
 text = "TOGGLE SPOILER"
 
 [node name="Process" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1477509558]
@@ -297,25 +309,19 @@ theme = ExtResource("2_e23it")
 [node name="Randomize" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer" unique_id=935616233]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
+focus_mode = 0
 theme = ExtResource("2_e23it")
 text = "RANDOMIZE"
 
 [node name="CreatePatch" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer" unique_id=1264564961]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
+focus_mode = 0
 theme = ExtResource("2_e23it")
 disabled = true
 text = "CREATE PATCH"
 
-[node name="Finger" type="TextureRect" parent="." unique_id=1149485131]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 77.0
-offset_right = 64.0
-offset_bottom = 93.0
-texture = ExtResource("10_fxds3")
-script = ExtResource("11_s1fa6")
-
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer/IsOneJobFiestaCheckBox" to="." method="_on_is_one_job_fiesta_check_box_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer/IsFullJobPoolCheckBox" to="." method="_on_allow_duplicates_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Button" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/Randomize" to="." method="_on_randomize_pressed"]

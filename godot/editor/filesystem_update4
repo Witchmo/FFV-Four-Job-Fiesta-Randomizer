@@ -1,4 +1,4 @@
-res://scenes/main.tscn
+res://scenes/gui.tscn
 res://resources/jobs/00_knight.tres
 res://resources/jobs/01_monk.tres
 res://resources/jobs/02_thief.tres
@@ -26,8 +26,9 @@ res://resources/characters/lenna.tres
 res://resources/characters/galuf.tres
 res://resources/characters/faris.tres
 res://themes/main_theme.tres
-res://scripts/ips_generator.gd
-res://LICENSE.txt
-res://export_presets.cfg
-res://scenes/gui.tscn
+res://scripts/menu_finger.gd
+res://scripts/randomizer_ui.gd
+res://scenes/check_box.gd
+res://scenes/main.tscn
 res://scripts/options_select.gd
+res://README.md

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c63m2p6etcsi"]
+
+[ext_resource type="Script" uid="uid://b076ooy0lew7e" path="res://scripts/menu_finger.gd" id="1_4cckd"]
+[ext_resource type="Texture2D" uid="uid://diw0iig36b1eu" path="res://sprites/gui/finger.png" id="2_dtcej"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qupqx"]
+atlas = ExtResource("2_dtcej")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw8q3"]
+atlas = ExtResource("2_dtcej")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bglms"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qupqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw8q3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Finger" type="Node2D" unique_id=492391311]
+script = ExtResource("1_4cckd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1067784237]
+sprite_frames = SubResource("SpriteFrames_bglms")
+autoplay = "default"
+frame = 1
+frame_progress = 0.1643424
+centered = false

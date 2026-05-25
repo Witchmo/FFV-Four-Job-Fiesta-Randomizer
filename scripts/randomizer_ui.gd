@@ -29,3 +29,7 @@ func _on_fiesta_randomizer_patch_created() -> void:
 
 func _on_create_patch_pressed() -> void:
 	request_create_patch.emit()
+
+
+func _on_is_one_job_fiesta_check_box_mouse_entered() -> void:
+	pass # Replace with function body.

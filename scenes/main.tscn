@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://b5oykcwwktfr6" path="res://resources/characters/galuf.tres" id="11_pm3ni"]
 [ext_resource type="Resource" uid="uid://b2m4e2ba8j1ut" path="res://resources/characters/faris.tres" id="12_y6deb"]
 [ext_resource type="PackedScene" uid="uid://8eh8254ivt5q" path="res://scenes/gui.tscn" id="13_og1vs"]
+[ext_resource type="PackedScene" uid="uid://c63m2p6etcsi" path="res://scenes/finger.tscn" id="14_a8y0u"]
 
 [node name="FiestaRandomizer" type="Node" unique_id=318480021]
 script = ExtResource("1_trceg")
@@ -26,6 +27,10 @@ freelancer = ExtResource("7_0ld40")
 characters = Array[ExtResource("8_gqmmt")]([ExtResource("9_yc10j"), ExtResource("10_jscy8"), ExtResource("11_pm3ni"), ExtResource("12_y6deb")])
 
 [node name="GUI" parent="." unique_id=1106996359 instance=ExtResource("13_og1vs")]
+
+[node name="Finger" parent="." unique_id=492391311 node_paths=PackedStringArray("ui_root") instance=ExtResource("14_a8y0u")]
+position = Vector2(48, 77)
+ui_root = NodePath("../GUI")
 
 [connection signal="jobs_selected" from="." to="GUI" method="_on_fiesta_randomizer_jobs_selected"]
 [connection signal="patch_created" from="." to="GUI" method="_on_fiesta_randomizer_patch_created"]
