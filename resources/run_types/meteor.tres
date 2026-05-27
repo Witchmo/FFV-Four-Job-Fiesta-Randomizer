@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RunType" format=3 uid="uid://485jiv72a7u7"]
+
+[ext_resource type="Script" uid="uid://nmgb5ad7y57j" path="res://scripts/crystal_pool.gd" id="1_5fb27"]
+[ext_resource type="Resource" uid="uid://l7mlnxnuogkl" path="res://resources/crystal_pools/all_crystals.tres" id="2_sbyoj"]
+[ext_resource type="Script" uid="uid://bv5q1ic5d665s" path="res://scripts/run_type.gd" id="6_equu8"]
+
+[resource]
+script = ExtResource("6_equu8")
+id = "METEOR"
+crystals = Array[ExtResource("1_5fb27")]([ExtResource("2_sbyoj"), ExtResource("2_sbyoj"), ExtResource("2_sbyoj"), ExtResource("2_sbyoj")])
+metadata/_custom_type_script = "uid://bv5q1ic5d665s"

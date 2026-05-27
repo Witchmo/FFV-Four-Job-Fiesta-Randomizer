@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="JobList" format=3 uid="uid://b1grx0p37bcvp"]
+
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="1_dr2le"]
+[ext_resource type="Resource" uid="uid://brauyc3qia0c8" path="res://resources/jobs/18_bard.tres" id="2_wwkhb"]
+[ext_resource type="Resource" uid="uid://esldfslbx0o0" path="res://resources/jobs/17_geomancer.tres" id="3_kmhtn"]
+[ext_resource type="Resource" uid="uid://chy653dyikvvj" path="res://resources/jobs/12_summoner.tres" id="4_3kr0g"]
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="5_31h2p"]
+
+[resource]
+script = ExtResource("5_31h2p")
+jobs = Array[ExtResource("1_dr2le")]([ExtResource("2_wwkhb"), ExtResource("3_kmhtn"), ExtResource("4_3kr0g")])
+metadata/_custom_type_script = "uid://bstd3unfipl2u"

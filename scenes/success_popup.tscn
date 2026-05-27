@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cwp1nv7xoal70" path="res://scripts/success_popup.gd" id="1_o5x4f"]
 [ext_resource type="Theme" uid="uid://d320cc11vt4ny" path="res://themes/main_theme.tres" id="2_lnev3"]
 
-[node name="SuccessPopup" type="Control" unique_id=2054727458]
+[node name="SuccessPopup" type="Control" unique_id=2054727458 node_paths=PackedStringArray("label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o5x4f")
-duation_frames = 60
+label = NodePath("PanelContainer/MarginContainer/Label")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=57827080]
 layout_mode = 1
@@ -42,7 +42,5 @@ layout_mode = 2
 theme = ExtResource("2_lnev3")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=1959970707]
-modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 theme = ExtResource("2_lnev3")
-text = "Success"

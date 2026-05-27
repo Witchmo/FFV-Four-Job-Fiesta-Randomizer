@@ -1,0 +1,287 @@
+[gd_scene format=3 uid="uid://8eh8254ivt5q"]
+
+[ext_resource type="Script" uid="uid://bmpsfl273n00e" path="res://scripts/randomizer_ui.gd" id="1_7u6ry"]
+[ext_resource type="Theme" uid="uid://d320cc11vt4ny" path="res://themes/main_theme.tres" id="2_e23it"]
+[ext_resource type="PackedScene" uid="uid://mak5dja3lo42" path="res://scenes/success_popup.tscn" id="2_xqxrh"]
+[ext_resource type="Script" uid="uid://djawxu5pl152e" path="res://scripts/options_select.gd" id="3_hl6be"]
+[ext_resource type="Script" uid="uid://b1c3gwlviofwg" path="res://scripts/job_spoiler.gd" id="4_sbet0"]
+[ext_resource type="Texture2D" uid="uid://bkiwqb51urn8m" path="res://sprites/gui/background.png" id="5_bglms"]
+[ext_resource type="Texture2D" uid="uid://celrqsb7vu6r5" path="res://sprites/characters/bartz/00.png" id="5_k81xp"]
+[ext_resource type="Texture2D" uid="uid://cwxgdi7ns67c7" path="res://sprites/characters/lenna/00.png" id="6_78ls4"]
+[ext_resource type="Texture2D" uid="uid://c5y2t5exmm03n" path="res://sprites/characters/galuf/00.png" id="7_ia15a"]
+[ext_resource type="Texture2D" uid="uid://iy62t0337up2" path="res://sprites/characters/faris/01.png" id="8_nf4fc"]
+[ext_resource type="Texture2D" uid="uid://i0w0brtejhh3" path="res://sprites/characters/krile/00.png" id="9_vwnqe"]
+
+[node name="GUI" type="Control" unique_id=1106996359 node_paths=PackedStringArray("job_spoiler", "options_select", "create_patch_button", "run_type_button", "job_set_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7u6ry")
+job_spoiler = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler")
+options_select = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options")
+create_patch_button = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/CreatePatch")
+run_type_button = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/RunTypeOptionButton")
+job_set_button = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/JobSetsOptionButton")
+success_popup = ExtResource("2_xqxrh")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1004446734]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_bglms")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1196005734]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_e23it")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1572948793]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_e23it")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=229422858]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1847973866]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1169372087]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=468274347]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1594807814]
+custom_minimum_size = Vector2(278, 260)
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="Options" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=544815098]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+script = ExtResource("3_hl6be")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options" unique_id=1226993187]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer" unique_id=910078338]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="RunTypeLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=1336615425]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "RUN TYPE"
+
+[node name="RunTypeOptionButton" type="OptionButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=1225703134]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=802568765]
+layout_mode = 2
+
+[node name="JobSetsLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=1297552040]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "JOB SET"
+
+[node name="JobSetsOptionButton" type="OptionButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=120766695]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=345241549]
+layout_mode = 2
+
+[node name="OptionsLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=1404512377]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "OPTIONS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=1682697082]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="IsOneJobFiestaCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=726721138]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "RESTRICTS ALL CHARACTERS TO THE SAME JOB"
+focus_mode = 0
+theme = ExtResource("2_e23it")
+text = "ONE JOB FIESTA"
+flat = true
+
+[node name="AllowDuplicates" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1367263494]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "ALLOWS JOBS TO BE SELECTED MORE THAN ONCE"
+focus_mode = 0
+text = "ALLOW DUPLICATES"
+flat = true
+
+[node name="IsIncludeFreelancerCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=143666990]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "INCLUDES THE FREELANCER INTO THE RANDOM JOB POOL"
+focus_mode = 0
+theme = ExtResource("2_e23it")
+text = "INCLUDE FREELANCER"
+flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=420073599]
+custom_minimum_size = Vector2(248, 228)
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="JobSpoiler" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=396174227 node_paths=PackedStringArray("container", "bartz", "lenna", "galuf", "faris", "krile")]
+custom_minimum_size = Vector2(248, 68)
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("4_sbet0")
+container = NodePath("MarginContainer")
+bartz = NodePath("MarginContainer/HBoxContainer/Bartz/TextureRect")
+lenna = NodePath("MarginContainer/HBoxContainer/Lenna/TextureRect")
+galuf = NodePath("MarginContainer/HBoxContainer/Galuf/TextureRect")
+faris = NodePath("MarginContainer/HBoxContainer/Faris/TextureRect")
+krile = NodePath("MarginContainer/HBoxContainer/Krile/TextureRect")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" unique_id=944746798]
+visible = false
+custom_minimum_size = Vector2(242, 62)
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer" unique_id=241994191]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="Bartz" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=250951298]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz" unique_id=1566645580]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "BARTZ"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz" unique_id=1768141527]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("5_k81xp")
+
+[node name="Lenna" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=14616424]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna" unique_id=1343257814]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "LENNA"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna" unique_id=1619529086]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_78ls4")
+
+[node name="Galuf" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=961160910]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf" unique_id=1104654042]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "GALUF"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf" unique_id=212282339]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_ia15a")
+
+[node name="Faris" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=1813135123]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris" unique_id=139993401]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "FARIS"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris" unique_id=733142974]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("8_nf4fc")
+
+[node name="Krile" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=1612094944]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Krile" unique_id=2099459787]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "KRILE"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Krile" unique_id=896865963]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_vwnqe")
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=397312413]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+size_flags_horizontal = 8
+focus_mode = 0
+text = "TOGGLE SPOILER"
+
+[node name="Process" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1477509558]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme = ExtResource("2_e23it")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process" unique_id=1492171120]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer" unique_id=1270598949]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_e23it")
+
+[node name="Randomize" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer" unique_id=935616233]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_e23it")
+text = "RANDOMIZE"
+
+[node name="CreatePatch" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer" unique_id=1264564961]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("2_e23it")
+disabled = true
+text = "CREATE PATCH"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Button" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/Randomize" to="." method="_on_randomize_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/CreatePatch" to="." method="_on_create_patch_pressed"]

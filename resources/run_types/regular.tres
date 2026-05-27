@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="RunType" format=3 uid="uid://bjgjeveswvka2"]
+
+[ext_resource type="Script" uid="uid://nmgb5ad7y57j" path="res://scripts/crystal_pool.gd" id="1_i7s3h"]
+[ext_resource type="Script" uid="uid://bonaqm50ccyue" path="res://scripts/crystal.gd" id="2_4gsck"]
+[ext_resource type="Script" uid="uid://bv5q1ic5d665s" path="res://scripts/run_type.gd" id="2_6lrty"]
+[ext_resource type="Resource" uid="uid://u1161vb6lf1" path="res://resources/crystals/wind_crystal.tres" id="2_diaoj"]
+[ext_resource type="Resource" uid="uid://gl2k0vffclu3" path="res://resources/crystals/water_crystal.tres" id="3_37341"]
+[ext_resource type="Resource" uid="uid://ole4eggfno3o" path="res://resources/crystals/fire_crystal.tres" id="4_nk1fv"]
+[ext_resource type="Resource" uid="uid://dtgv4qbw000do" path="res://resources/crystals/earth_crystal.tres" id="5_4e1y2"]
+
+[sub_resource type="Resource" id="Resource_37341"]
+script = ExtResource("1_i7s3h")
+crystals = Array[ExtResource("2_4gsck")]([ExtResource("2_diaoj")])
+metadata/_custom_type_script = "uid://nmgb5ad7y57j"
+
+[sub_resource type="Resource" id="Resource_4gsck"]
+script = ExtResource("1_i7s3h")
+crystals = Array[ExtResource("2_4gsck")]([ExtResource("3_37341")])
+metadata/_custom_type_script = "uid://nmgb5ad7y57j"
+
+[sub_resource type="Resource" id="Resource_1jsms"]
+script = ExtResource("1_i7s3h")
+crystals = Array[ExtResource("2_4gsck")]([ExtResource("4_nk1fv")])
+metadata/_custom_type_script = "uid://nmgb5ad7y57j"
+
+[sub_resource type="Resource" id="Resource_diaoj"]
+script = ExtResource("1_i7s3h")
+crystals = Array[ExtResource("2_4gsck")]([ExtResource("5_4e1y2")])
+metadata/_custom_type_script = "uid://nmgb5ad7y57j"
+
+[resource]
+script = ExtResource("2_6lrty")
+id = "REGULAR"
+crystals = Array[ExtResource("1_i7s3h")]([SubResource("Resource_37341"), SubResource("Resource_4gsck"), SubResource("Resource_1jsms"), SubResource("Resource_diaoj")])
+metadata/_custom_type_script = "uid://bv5q1ic5d665s"

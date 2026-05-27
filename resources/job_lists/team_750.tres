@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="JobList" format=3 uid="uid://e5kedxlo532u"]
+
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="1_0yskn"]
+[ext_resource type="Resource" uid="uid://fsn8ryepqtj0" path="res://resources/jobs/09_white_mage.tres" id="2_xsw58"]
+[ext_resource type="Resource" uid="uid://b07ifkucbuhrg" path="res://resources/jobs/10_black_mage.tres" id="3_t64tf"]
+[ext_resource type="Resource" uid="uid://cyc6j3hep3p2l" path="res://resources/jobs/13_blue_mage.tres" id="4_pdyng"]
+[ext_resource type="Resource" uid="uid://dqvq3dnx8llr1" path="res://resources/jobs/11_time_mage.tres" id="5_au5u6"]
+[ext_resource type="Resource" uid="uid://chy653dyikvvj" path="res://resources/jobs/12_summoner.tres" id="6_5obob"]
+[ext_resource type="Resource" uid="uid://bphlnkvqc7hf5" path="res://resources/jobs/14_red_mage.tres" id="7_yddj3"]
+[ext_resource type="Resource" uid="uid://esldfslbx0o0" path="res://resources/jobs/17_geomancer.tres" id="8_kojj1"]
+[ext_resource type="Resource" uid="uid://brauyc3qia0c8" path="res://resources/jobs/18_bard.tres" id="9_rj4u0"]
+[ext_resource type="Resource" uid="uid://dr8jp5iobw1pq" path="res://resources/jobs/16_chemist.tres" id="10_tm513"]
+[ext_resource type="Resource" uid="uid://npslqisd6ya1" path="res://resources/jobs/19_dancer.tres" id="11_1xk5u"]
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="12_rsb2x"]
+
+[resource]
+script = ExtResource("12_rsb2x")
+jobs = Array[ExtResource("1_0yskn")]([ExtResource("2_xsw58"), ExtResource("3_t64tf"), ExtResource("4_pdyng"), ExtResource("5_au5u6"), ExtResource("6_5obob"), ExtResource("7_yddj3"), ExtResource("8_kojj1"), ExtResource("9_rj4u0"), ExtResource("10_tm513"), ExtResource("11_1xk5u")])
+metadata/_custom_type_script = "uid://bstd3unfipl2u"

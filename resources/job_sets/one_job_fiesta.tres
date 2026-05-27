@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="JobSet" format=3 uid="uid://egumfxbeqkxp"]
+
+[ext_resource type="Script" uid="uid://bytta6fp8cn5y" path="res://scripts/job_set.gd" id="1_ndoex"]
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="2_71dar"]
+[ext_resource type="Script" uid="uid://dyv3c8hqfoehh" path="res://scripts/selection_strategies/one_job_fiesta_selection.gd" id="2_72i2g"]
+[ext_resource type="Resource" uid="uid://tqss8j83leu" path="res://resources/job_lists/all_jobs.tres" id="3_71dar"]
+
+[sub_resource type="Resource" id="Resource_ncjtt"]
+script = ExtResource("2_72i2g")
+metadata/_custom_type_script = "uid://dyv3c8hqfoehh"
+
+[resource]
+script = ExtResource("1_ndoex")
+id = "ONE JOB FIESTA"
+sets = Array[ExtResource("2_71dar")]([ExtResource("3_71dar")])
+selection_strategy = SubResource("Resource_ncjtt")
+metadata/_custom_type_script = "uid://bytta6fp8cn5y"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RunType" format=3 uid="uid://c3bq1fytdsjf4"]
+
+[ext_resource type="Script" uid="uid://nmgb5ad7y57j" path="res://scripts/crystal_pool.gd" id="1_hlwgn"]
+[ext_resource type="Resource" uid="uid://cghj2i4qetsjf" path="res://resources/crystal_pools/sirocco/sirocco_1.tres" id="2_ec1aq"]
+[ext_resource type="Resource" uid="uid://xbqnu57pkctk" path="res://resources/crystal_pools/sirocco/sirocco_2.tres" id="3_txhgo"]
+[ext_resource type="Resource" uid="uid://sit2yvn0awp6" path="res://resources/crystal_pools/sirocco/sirocco_3.tres" id="4_jftea"]
+[ext_resource type="Resource" uid="uid://cxphra3fapyt3" path="res://resources/crystal_pools/sirocco/sirocco_4.tres" id="5_0unvg"]
+[ext_resource type="Script" uid="uid://bv5q1ic5d665s" path="res://scripts/run_type.gd" id="6_7o572"]
+
+[resource]
+script = ExtResource("6_7o572")
+id = "SIROCCO"
+crystals = Array[ExtResource("1_hlwgn")]([ExtResource("2_ec1aq"), ExtResource("5_0unvg"), ExtResource("3_txhgo"), ExtResource("4_jftea")])
+metadata/_custom_type_script = "uid://bv5q1ic5d665s"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="JobSet" format=3 uid="uid://43hsngoso5ve"]
+
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="1_5abhp"]
+[ext_resource type="Resource" uid="uid://b2qhvmvskxu6o" path="res://resources/job_lists/classic_jobs.tres" id="2_6ojnb"]
+[ext_resource type="Script" uid="uid://bytta6fp8cn5y" path="res://scripts/job_set.gd" id="8_m5ob2"]
+[ext_resource type="Script" uid="uid://0hve4ptl8q6v" path="res://scripts/selection_strategies/classic_jobs_selection.gd" id="9_ishdd"]
+
+[sub_resource type="Resource" id="Resource_fglcf"]
+script = ExtResource("9_ishdd")
+metadata/_custom_type_script = "uid://0hve4ptl8q6v"
+
+[resource]
+script = ExtResource("8_m5ob2")
+id = "CLASSIC JOBS"
+sets = Array[ExtResource("1_5abhp")]([ExtResource("2_6ojnb")])
+selection_strategy = SubResource("Resource_fglcf")
+metadata/_custom_type_script = "uid://bytta6fp8cn5y"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RunType" format=3 uid="uid://dqta6kxt5m46g"]
+
+[ext_resource type="Script" uid="uid://nmgb5ad7y57j" path="res://scripts/crystal_pool.gd" id="1_ayfg1"]
+[ext_resource type="Resource" uid="uid://hat5cnap6edm" path="res://resources/crystal_pools/geyser/geyser_1.tres" id="2_0yibd"]
+[ext_resource type="Resource" uid="uid://crdfmjnqxyyf3" path="res://resources/crystal_pools/geyser/geyser_2.tres" id="3_74jse"]
+[ext_resource type="Resource" uid="uid://cp5crss5wssec" path="res://resources/crystal_pools/geyser/geyser_3.tres" id="4_603mx"]
+[ext_resource type="Resource" uid="uid://b0idelrpspa7e" path="res://resources/crystal_pools/geyser/geyser_4.tres" id="5_mbv3v"]
+[ext_resource type="Script" uid="uid://bv5q1ic5d665s" path="res://scripts/run_type.gd" id="6_hi8h6"]
+
+[resource]
+script = ExtResource("6_hi8h6")
+id = "GEYSER"
+crystals = Array[ExtResource("1_ayfg1")]([ExtResource("2_0yibd"), ExtResource("5_mbv3v"), ExtResource("3_74jse"), ExtResource("4_603mx")])
+metadata/_custom_type_script = "uid://bv5q1ic5d665s"

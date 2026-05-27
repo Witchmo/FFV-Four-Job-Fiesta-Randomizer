@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="JobSet" format=3 uid="uid://dwq3gfxjqiyc0"]
+
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="1_vpl8o"]
+[ext_resource type="Resource" uid="uid://e5kedxlo532u" path="res://resources/job_lists/team_750.tres" id="2_luk8w"]
+[ext_resource type="Resource" uid="uid://c37db27rrkxrq" path="res://resources/job_lists/team_no_750.tres" id="3_mwf8o"]
+[ext_resource type="Script" uid="uid://bytta6fp8cn5y" path="res://scripts/job_set.gd" id="22_kttd7"]
+[ext_resource type="Script" uid="uid://c6ats6hmmm6nk" path="res://scripts/selection_strategies/team_375_selection.gd" id="23_7l7mm"]
+
+[sub_resource type="Resource" id="Resource_fvx28"]
+script = ExtResource("23_7l7mm")
+metadata/_custom_type_script = "uid://c6ats6hmmm6nk"
+
+[resource]
+script = ExtResource("22_kttd7")
+id = "TEAM 375"
+sets = Array[ExtResource("1_vpl8o")]([ExtResource("2_luk8w"), ExtResource("3_mwf8o")])
+selection_strategy = SubResource("Resource_fvx28")
+metadata/_custom_type_script = "uid://bytta6fp8cn5y"

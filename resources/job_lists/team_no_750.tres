@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="JobList" format=3 uid="uid://c37db27rrkxrq"]
+
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="1_q6mwh"]
+[ext_resource type="Resource" uid="uid://0nxp48ht3uot" path="res://resources/jobs/00_knight.tres" id="2_j0dc2"]
+[ext_resource type="Resource" uid="uid://dawrird3wyrwf" path="res://resources/jobs/01_monk.tres" id="3_g7idq"]
+[ext_resource type="Resource" uid="uid://g3r2bt27lnj" path="res://resources/jobs/02_thief.tres" id="4_5nqar"]
+[ext_resource type="Resource" uid="uid://bpw00fextg7rn" path="res://resources/jobs/03_dragoon.tres" id="5_2f6ox"]
+[ext_resource type="Resource" uid="uid://coue3pyqg57gj" path="res://resources/jobs/04_ninja.tres" id="6_l2n58"]
+[ext_resource type="Resource" uid="uid://bpy3bvt6pbols" path="res://resources/jobs/05_samurai.tres" id="7_3d56b"]
+[ext_resource type="Resource" uid="uid://c2kx8uebnff40" path="res://resources/jobs/06_berserker.tres" id="8_bo2wm"]
+[ext_resource type="Resource" uid="uid://vqegand0dpfb" path="res://resources/jobs/07_ranger.tres" id="9_0pok4"]
+[ext_resource type="Resource" uid="uid://bhkpwx83o5wp4" path="res://resources/jobs/08_mystic_knight.tres" id="10_tgy65"]
+[ext_resource type="Resource" uid="uid://bcdewx4oneegc" path="res://resources/jobs/15_beastmaster.tres" id="11_txwue"]
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="12_3f1yh"]
+
+[resource]
+script = ExtResource("12_3f1yh")
+jobs = Array[ExtResource("1_q6mwh")]([ExtResource("2_j0dc2"), ExtResource("3_g7idq"), ExtResource("4_5nqar"), ExtResource("5_2f6ox"), ExtResource("6_l2n58"), ExtResource("7_3d56b"), ExtResource("8_bo2wm"), ExtResource("9_0pok4"), ExtResource("10_tgy65"), ExtResource("11_txwue")])
+metadata/_custom_type_script = "uid://bstd3unfipl2u"

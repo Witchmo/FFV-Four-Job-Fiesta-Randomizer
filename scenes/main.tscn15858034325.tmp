@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://iog6na1kojpk"]
+
+[ext_resource type="Script" uid="uid://b16oxvlnw7isx" path="res://scripts/fiesta_randomizer.gd" id="1_trceg"]
+[ext_resource type="Script" uid="uid://bonaqm50ccyue" path="res://scripts/crystal.gd" id="2_a8y0u"]
+[ext_resource type="Resource" uid="uid://u1161vb6lf1" path="res://resources/crystals/wind_crystal.tres" id="3_jkv2x"]
+[ext_resource type="Resource" uid="uid://gl2k0vffclu3" path="res://resources/crystals/water_crystal.tres" id="4_jbj1t"]
+[ext_resource type="Resource" uid="uid://ole4eggfno3o" path="res://resources/crystals/fire_crystal.tres" id="5_muem4"]
+[ext_resource type="Resource" uid="uid://dtgv4qbw000do" path="res://resources/crystals/earth_crystal.tres" id="6_dp3eg"]
+[ext_resource type="Resource" uid="uid://c0msfa7ptcb1s" path="res://resources/jobs/21_freelancer.tres" id="7_0ld40"]
+[ext_resource type="Script" uid="uid://bdwwj7rrgt2u7" path="res://scripts/character_base.gd" id="8_gqmmt"]
+[ext_resource type="Resource" uid="uid://besajijudyu10" path="res://resources/characters/bartz.tres" id="9_yc10j"]
+[ext_resource type="Resource" uid="uid://duba4n3mp83nv" path="res://resources/characters/lenna.tres" id="10_jscy8"]
+[ext_resource type="Resource" uid="uid://b5oykcwwktfr6" path="res://resources/characters/galuf.tres" id="11_pm3ni"]
+[ext_resource type="Resource" uid="uid://b2m4e2ba8j1ut" path="res://resources/characters/faris.tres" id="12_y6deb"]
+[ext_resource type="PackedScene" uid="uid://8eh8254ivt5q" path="res://scenes/gui.tscn" id="13_og1vs"]
+[ext_resource type="PackedScene" uid="uid://c63m2p6etcsi" path="res://scenes/finger.tscn" id="14_a8y0u"]
+[ext_resource type="Script" uid="uid://k0ke85vi01nt" path="res://scripts/job_selector.gd" id="15_jkv2x"]
+[ext_resource type="Script" uid="uid://bv5q1ic5d665s" path="res://scripts/run_type.gd" id="16_jscy8"]
+[ext_resource type="Resource" uid="uid://bjgjeveswvka2" path="res://resources/run_types/regular.tres" id="17_pm3ni"]
+[ext_resource type="Resource" uid="uid://blhq008pvf4cf" path="res://resources/run_types/typhoon.tres" id="18_y6deb"]
+[ext_resource type="Resource" uid="uid://dqta6kxt5m46g" path="res://resources/run_types/geyser.tres" id="19_og1vs"]
+[ext_resource type="Resource" uid="uid://c3bq1fytdsjf4" path="res://resources/run_types/sirocco.tres" id="20_2wyq8"]
+[ext_resource type="Resource" uid="uid://c7lthldlhj4je" path="res://resources/run_types/volcano.tres" id="21_vxglm"]
+[ext_resource type="Resource" uid="uid://485jiv72a7u7" path="res://resources/run_types/meteor.tres" id="22_2f3dj"]
+
+[node name="FiestaRandomizer" type="Node" unique_id=318480021]
+script = ExtResource("1_trceg")
+crystals = Dictionary[int, ExtResource("2_a8y0u")]({
+0: ExtResource("3_jkv2x"),
+1: ExtResource("4_jbj1t"),
+2: ExtResource("5_muem4"),
+3: ExtResource("6_dp3eg")
+})
+freelancer = ExtResource("7_0ld40")
+characters = Array[ExtResource("8_gqmmt")]([ExtResource("9_yc10j"), ExtResource("10_jscy8"), ExtResource("11_pm3ni"), ExtResource("12_y6deb")])
+
+[node name="GUI" parent="." unique_id=1106996359 instance=ExtResource("13_og1vs")]
+
+[node name="Finger" parent="." unique_id=492391311 node_paths=PackedStringArray("ui_root") instance=ExtResource("14_a8y0u")]
+position = Vector2(48, 77)
+ui_root = NodePath("../GUI")
+
+[node name="JobSelector" type="Node" parent="." unique_id=1116743941]
+script = ExtResource("15_jkv2x")
+run_types = Dictionary[String, ExtResource("16_jscy8")]({
+"GEYSER": ExtResource("19_og1vs"),
+"METEOR": ExtResource("22_2f3dj"),
+"REGULAR": ExtResource("17_pm3ni"),
+"SIROCCO": ExtResource("20_2wyq8"),
+"TYPHOON": ExtResource("18_y6deb"),
+"VOLCANO": ExtResource("21_vxglm")
+})
+
+[connection signal="jobs_selected" from="." to="GUI" method="_on_fiesta_randomizer_jobs_selected"]
+[connection signal="patch_created" from="." to="GUI" method="_on_fiesta_randomizer_patch_created"]
+[connection signal="request_create_patch" from="GUI" to="." method="_on_gui_request_create_patch"]
+[connection signal="request_randomization" from="GUI" to="." method="_on_gui_request_randomization"]
+[connection signal="set_job_sets" from="JobSelector" to="GUI" method="_on_job_selector_set_job_sets"]
+[connection signal="set_run_types" from="JobSelector" to="GUI" method="_on_job_selector_set_run_types"]

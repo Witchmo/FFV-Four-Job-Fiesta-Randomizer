@@ -1,11 +1,19 @@
+class_name SuccessPopup
 extends Control
 
-@export var duation_frames: int
-var current_frames: int = 0
+@export var label: Label
+var _duration: int
+var _current_frames: int = 0
+
+
+func set_data(text: String, text_color: Color, duration: int) -> void:
+	label.text = text
+	label.modulate = text_color
+	_duration = duration
 
 
 func _process(delta: float) -> void:
-	current_frames += 1
+	_current_frames += 1
 	
-	if current_frames >= duation_frames:
+	if _current_frames >= _duration:
 		queue_free()

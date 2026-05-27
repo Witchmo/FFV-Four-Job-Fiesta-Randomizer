@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="JobList" format=3 uid="uid://tqss8j83leu"]
+
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="1_25nsi"]
+[ext_resource type="Resource" uid="uid://0nxp48ht3uot" path="res://resources/jobs/00_knight.tres" id="2_ghigi"]
+[ext_resource type="Resource" uid="uid://dawrird3wyrwf" path="res://resources/jobs/01_monk.tres" id="3_ipufd"]
+[ext_resource type="Resource" uid="uid://g3r2bt27lnj" path="res://resources/jobs/02_thief.tres" id="4_s7utc"]
+[ext_resource type="Resource" uid="uid://bpw00fextg7rn" path="res://resources/jobs/03_dragoon.tres" id="5_wuw37"]
+[ext_resource type="Resource" uid="uid://coue3pyqg57gj" path="res://resources/jobs/04_ninja.tres" id="6_hk4fr"]
+[ext_resource type="Resource" uid="uid://bpy3bvt6pbols" path="res://resources/jobs/05_samurai.tres" id="7_4p7cy"]
+[ext_resource type="Resource" uid="uid://c2kx8uebnff40" path="res://resources/jobs/06_berserker.tres" id="8_2sb7e"]
+[ext_resource type="Resource" uid="uid://vqegand0dpfb" path="res://resources/jobs/07_ranger.tres" id="9_8f5k8"]
+[ext_resource type="Resource" uid="uid://bhkpwx83o5wp4" path="res://resources/jobs/08_mystic_knight.tres" id="10_m13ru"]
+[ext_resource type="Resource" uid="uid://fsn8ryepqtj0" path="res://resources/jobs/09_white_mage.tres" id="11_3ge8y"]
+[ext_resource type="Resource" uid="uid://b07ifkucbuhrg" path="res://resources/jobs/10_black_mage.tres" id="12_78by3"]
+[ext_resource type="Resource" uid="uid://dqvq3dnx8llr1" path="res://resources/jobs/11_time_mage.tres" id="13_tnyiw"]
+[ext_resource type="Resource" uid="uid://chy653dyikvvj" path="res://resources/jobs/12_summoner.tres" id="14_ckl6s"]
+[ext_resource type="Resource" uid="uid://cyc6j3hep3p2l" path="res://resources/jobs/13_blue_mage.tres" id="15_7hg84"]
+[ext_resource type="Resource" uid="uid://bphlnkvqc7hf5" path="res://resources/jobs/14_red_mage.tres" id="16_2wuca"]
+[ext_resource type="Resource" uid="uid://bcdewx4oneegc" path="res://resources/jobs/15_beastmaster.tres" id="17_14rkk"]
+[ext_resource type="Resource" uid="uid://dr8jp5iobw1pq" path="res://resources/jobs/16_chemist.tres" id="18_53p0d"]
+[ext_resource type="Resource" uid="uid://esldfslbx0o0" path="res://resources/jobs/17_geomancer.tres" id="19_cbcwh"]
+[ext_resource type="Resource" uid="uid://brauyc3qia0c8" path="res://resources/jobs/18_bard.tres" id="20_baxng"]
+[ext_resource type="Resource" uid="uid://npslqisd6ya1" path="res://resources/jobs/19_dancer.tres" id="21_1lvlt"]
+[ext_resource type="Resource" uid="uid://oswvgm8vj1fu" path="res://resources/jobs/20_mime.tres" id="22_pled0"]
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="23_is81k"]
+
+[resource]
+script = ExtResource("23_is81k")
+jobs = Array[ExtResource("1_25nsi")]([ExtResource("2_ghigi"), ExtResource("3_ipufd"), ExtResource("4_s7utc"), ExtResource("5_wuw37"), ExtResource("6_hk4fr"), ExtResource("7_4p7cy"), ExtResource("8_2sb7e"), ExtResource("9_8f5k8"), ExtResource("10_m13ru"), ExtResource("11_3ge8y"), ExtResource("12_78by3"), ExtResource("13_tnyiw"), ExtResource("14_ckl6s"), ExtResource("15_7hg84"), ExtResource("16_2wuca"), ExtResource("17_14rkk"), ExtResource("18_53p0d"), ExtResource("19_cbcwh"), ExtResource("20_baxng"), ExtResource("21_1lvlt"), ExtResource("22_pled0")])
+metadata/_custom_type_script = "uid://bstd3unfipl2u"

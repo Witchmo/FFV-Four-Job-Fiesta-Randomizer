@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RunType" format=3 uid="uid://blhq008pvf4cf"]
+
+[ext_resource type="Script" uid="uid://nmgb5ad7y57j" path="res://scripts/crystal_pool.gd" id="1_e5fwg"]
+[ext_resource type="Resource" uid="uid://pkspjo7r1o6" path="res://resources/crystal_pools/typhoon/typhoon_1.tres" id="2_hlfel"]
+[ext_resource type="Resource" uid="uid://dngmktljm7yoy" path="res://resources/crystal_pools/typhoon/typhoon_2.tres" id="3_jphyn"]
+[ext_resource type="Resource" uid="uid://dlom1h8vegjfm" path="res://resources/crystal_pools/typhoon/typhoon_3.tres" id="4_ltci2"]
+[ext_resource type="Resource" uid="uid://dyjekl4l1rkuc" path="res://resources/crystal_pools/typhoon/typhoon_4.tres" id="5_sinu3"]
+[ext_resource type="Script" uid="uid://bv5q1ic5d665s" path="res://scripts/run_type.gd" id="6_h6mhp"]
+
+[resource]
+script = ExtResource("6_h6mhp")
+id = "TYPHOON"
+crystals = Array[ExtResource("1_e5fwg")]([ExtResource("2_hlfel"), ExtResource("3_jphyn"), ExtResource("4_ltci2"), ExtResource("5_sinu3")])
+metadata/_custom_type_script = "uid://bv5q1ic5d665s"

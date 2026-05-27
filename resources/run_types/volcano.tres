@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RunType" format=3 uid="uid://c7lthldlhj4je"]
+
+[ext_resource type="Script" uid="uid://nmgb5ad7y57j" path="res://scripts/crystal_pool.gd" id="1_ojn4t"]
+[ext_resource type="Resource" uid="uid://b5dwsbbijmnbj" path="res://resources/crystal_pools/volcano/volcano_1.tres" id="2_rp7wt"]
+[ext_resource type="Resource" uid="uid://d7ge04l5wbqt" path="res://resources/crystal_pools/volcano/volcano_2.tres" id="3_84ouk"]
+[ext_resource type="Resource" uid="uid://c17plxhub64g1" path="res://resources/crystal_pools/volcano/volcano_3.tres" id="4_cesg0"]
+[ext_resource type="Resource" uid="uid://1hfo2oqi6saw" path="res://resources/crystal_pools/volcano/volcano_4.tres" id="5_erk1w"]
+[ext_resource type="Script" uid="uid://bv5q1ic5d665s" path="res://scripts/run_type.gd" id="6_cb70o"]
+
+[resource]
+script = ExtResource("6_cb70o")
+id = "VOLCANO"
+crystals = Array[ExtResource("1_ojn4t")]([ExtResource("5_erk1w"), ExtResource("4_cesg0"), ExtResource("3_84ouk"), ExtResource("2_rp7wt")])
+metadata/_custom_type_script = "uid://bv5q1ic5d665s"

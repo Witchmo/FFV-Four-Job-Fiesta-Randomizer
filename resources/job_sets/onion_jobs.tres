@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="JobSet" format=3 uid="uid://cm18camlho2v8"]
+
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="1_tgc05"]
+[ext_resource type="Resource" uid="uid://3dqgb4apnlg6" path="res://resources/job_lists/onion_1.tres" id="2_00u2s"]
+[ext_resource type="Resource" uid="uid://b8rxn8ffk30yv" path="res://resources/job_lists/onion_2.tres" id="3_vk8kc"]
+[ext_resource type="Resource" uid="uid://b1grx0p37bcvp" path="res://resources/job_lists/onion_3.tres" id="4_3033v"]
+[ext_resource type="Resource" uid="uid://k4pspb6t5vxw" path="res://resources/job_lists/onion_4.tres" id="5_4f83a"]
+[ext_resource type="Script" uid="uid://bytta6fp8cn5y" path="res://scripts/job_set.gd" id="14_20y74"]
+[ext_resource type="Script" uid="uid://b8bigysi0g373" path="res://scripts/selection_strategies/onion_jobs_selection.gd" id="15_u4wwo"]
+
+[sub_resource type="Resource" id="Resource_8lid4"]
+script = ExtResource("15_u4wwo")
+metadata/_custom_type_script = "uid://b8bigysi0g373"
+
+[resource]
+script = ExtResource("14_20y74")
+id = "ONION JOBS"
+sets = Array[ExtResource("1_tgc05")]([ExtResource("2_00u2s"), ExtResource("3_vk8kc"), ExtResource("4_3033v"), ExtResource("5_4f83a")])
+selection_strategy = SubResource("Resource_8lid4")
+metadata/_custom_type_script = "uid://bytta6fp8cn5y"

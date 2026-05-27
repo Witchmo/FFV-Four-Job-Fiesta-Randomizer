@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CrystalPool" format=3 uid="uid://hat5cnap6edm"]
+
+[ext_resource type="Script" uid="uid://bonaqm50ccyue" path="res://scripts/crystal.gd" id="1_xfcgp"]
+[ext_resource type="Resource" uid="uid://u1161vb6lf1" path="res://resources/crystals/wind_crystal.tres" id="2_rgvhx"]
+[ext_resource type="Resource" uid="uid://gl2k0vffclu3" path="res://resources/crystals/water_crystal.tres" id="3_wnu11"]
+[ext_resource type="Script" uid="uid://nmgb5ad7y57j" path="res://scripts/crystal_pool.gd" id="4_yu2g8"]
+
+[resource]
+script = ExtResource("4_yu2g8")
+crystals = Array[ExtResource("1_xfcgp")]([ExtResource("2_rgvhx"), ExtResource("3_wnu11")])
+metadata/_custom_type_script = "uid://nmgb5ad7y57j"
