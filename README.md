@@ -1,7 +1,7 @@
 # FFV-Four-Job-Fiesta-Randomizer
-A simple FFV Four Job Fiesta randomizer built in Godot. Features built-in .ips patch generation for applying class selection to a ROM.
+A simple FFV Four Job Fiesta randomizer built in Godot. Features built-in .ips patch generation for applying job selection to a ROM.
 
-Unlike a traditional Four Job Fiesta, this automatically sets your character's class to the randomly chosen one. Equipment will also be given to characters based on what the selected class can equip and what equipment the character would normally start with.
+Unlike a traditional Four Job Fiesta, this automatically sets your character's job to the randomly chosen one. Equipment will also be given to characters based on what the selected job can equip and what equipment the character would normally start with.
 
 It's recommended to use this in conjuction with the "Mime Galuf Battle Sprites in FFV" hack as well, unless you want an invisible Mime Galuf: https://www.romhacking.net/hacks/8668/
 
