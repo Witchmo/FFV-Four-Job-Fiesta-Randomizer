@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SNESPatchSchema" format=3 uid="uid://cgt2i6go8txsf"]
+
+[ext_resource type="Script" uid="uid://cc11f6tgbantc" path="res://scripts/patch_schemas/snes_patch_schema.gd" id="1_bhi2q"]
+
+[resource]
+script = ExtResource("1_bhi2q")
+character_rom_offsets = Array[int]([1142785, 1142865, 1142945, 1143025])
+no_job_change_offset = 176803
+no_job_change_value = 32991
+no_job_change_length = 2
+metadata/_custom_type_script = "uid://cc11f6tgbantc"

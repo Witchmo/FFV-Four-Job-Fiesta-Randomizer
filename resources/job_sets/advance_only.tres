@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="JobSet" format=3 uid="uid://b8tqkivm0v6ty"]
+
+[ext_resource type="Script" uid="uid://bytta6fp8cn5y" path="res://scripts/job_set.gd" id="1_1lfek"]
+[ext_resource type="Script" uid="uid://0hve4ptl8q6v" path="res://scripts/selection_strategies/classic_jobs_selection.gd" id="2_vcqyd"]
+[ext_resource type="Script" uid="uid://bstd3unfipl2u" path="res://scripts/job_list.gd" id="3_8epan"]
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="4_vwu7a"]
+[ext_resource type="Resource" uid="uid://dlvt8tgcdik7q" path="res://resources/jobs/22_necromancer.tres" id="5_85wkh"]
+[ext_resource type="Resource" uid="uid://cx02w3kv7tqpl" path="res://resources/jobs/23_oracle.tres" id="6_4qqte"]
+[ext_resource type="Resource" uid="uid://dekjjmo1ijj2c" path="res://resources/jobs/24_cannoneer.tres" id="7_k6vel"]
+[ext_resource type="Resource" uid="uid://428k727clcga" path="res://resources/jobs/25_gladiator.tres" id="8_rqtwp"]
+
+[sub_resource type="Resource" id="Resource_gni8x"]
+script = ExtResource("2_vcqyd")
+metadata/_custom_type_script = "uid://0hve4ptl8q6v"
+
+[sub_resource type="Resource" id="Resource_myl6l"]
+script = ExtResource("3_8epan")
+jobs = Array[ExtResource("4_vwu7a")]([ExtResource("5_85wkh"), ExtResource("6_4qqte"), ExtResource("7_k6vel"), ExtResource("8_rqtwp")])
+metadata/_custom_type_script = "uid://bstd3unfipl2u"
+
+[resource]
+script = ExtResource("1_1lfek")
+id = "ADVANCE ONLY"
+sets = Array[ExtResource("3_8epan")]([SubResource("Resource_myl6l")])
+selection_strategy = SubResource("Resource_gni8x")
+metadata/_custom_type_script = "uid://bytta6fp8cn5y"

@@ -40,6 +40,24 @@ func write_u24_be(value: int) -> void:
 	data.append(value & 0xFF)
 	
 	
+func write_u32_le(value: int) -> void:
+	assert(value >= 0x00 and value <= 0xFFFFFFFF)
+
+	data.append(value & 0xFF)
+	data.append((value >> 8) & 0xFF)
+	data.append((value >> 16) & 0xFF)
+	data.append((value >> 24) & 0xFF)
+	
+	
+func write_u32_be(value: int) -> void:
+	assert(value >= 0x00 and value <= 0xFFFFFFFF)
+	
+	data.append((value >> 24) & 0xFF)
+	data.append((value >> 16) & 0xFF)
+	data.append((value >> 8) & 0xFF)
+	data.append(value & 0xFF)
+	
+	
 func write_padding(value: int, count: int) -> void:
 	for i in count:
 		write_u8(value)

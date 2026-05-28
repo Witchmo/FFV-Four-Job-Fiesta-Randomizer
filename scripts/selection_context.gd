@@ -25,4 +25,10 @@ func build_job_pool_builder(options: RandomizerOptions, run_type: RunType, job_s
 	if options.is_include_freelancer:
 		builder.modifiers.append(AddFreelancerModifier.new())
 		
+	if options.is_berserker_risk:
+		builder.modifiers.append(BerserkerRiskModifier.new())
+		
+	if options.is_include_advance_jobs:
+		builder.modifiers.append(AddAdvanceJobs.new())
+		
 	return builder

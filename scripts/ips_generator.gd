@@ -1,117 +1,60 @@
 class_name IPSGenerator
-extends RefCounted
+extends Node
 
-var _rom_offsets: Array[int] = [0x117001, 0x117051, 0x1170A1, 0x1170F1]
-var _characters: Array[CharacterBase]
-var _jobs: Array[Job]
-var _no_job_change_offset: int = 0x2B2A3
+signal patch_created
 
-
-func _init(characters: Array[CharacterBase], jobs: Array[Job]) -> void:
-	_characters = characters
-	_jobs = jobs
+@export var characters: Array[CharacterBase]
+@export var schemas: Dictionary[String, IPSPatchSchema]
+@export var default_file_name: String = "FFV - Four Job Fiesta.ips"
 
 
-func save_ips_file(path: String) -> void:
+func save_ips_file(path: String, schema: IPSPatchSchema, jobs: Array[Job]) -> void:
 	var file: FileAccess = FileAccess.open(path, FileAccess.WRITE)
-	
-	if file == null:
-		push_error("Failed to open file: %s" % path)
-		return
-	
-	var bytes: PackedByteArray = _build_ips_patch()
-	
-	file.store_buffer(bytes)
-	
-	file.close()
-
-
-func _build_ips_patch() -> PackedByteArray:
 	var w: BinaryWriter = BinaryWriter.new()
 	
 	for c in "PATCH":
 		w.write_u8(c.unicode_at(0))
 	
-	for i in range(_characters.size()):
-		var character_data: CharacterData = CharacterData.new(_characters[i], _jobs[i])
-		
-		_write_ips_record(w, _rom_offsets[i], _build_character_data(character_data))
-		
-	_apply_no_job_change(w)
-		
+	w.data.append_array(schema.serialize_patch(characters, jobs))
+	
 	for c in "EOF":
 		w.write_u8(c.unicode_at(0))
 	
-	return w.data
+	file.store_buffer(w.data)
+	
+	file.close()
+	
+	
+func _get_file_path() -> String:
+	var dialog: FileDialog = FileDialog.new()
+	
+	dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+	dialog.access = FileDialog.ACCESS_FILESYSTEM
+	dialog.use_native_dialog = true
+	dialog.filters = PackedStringArray(["*.ips; IPS file"])
+	dialog.current_file = default_file_name
+	
+	add_child(dialog)
+	
+	dialog.popup_centered()
+	
+	var path: String = await dialog.file_selected
+	
+	dialog.queue_free()
+	
+	return path
 
 
-func _write_ips_record(writer: BinaryWriter, offset: int, character_data: PackedByteArray) -> void:
-	writer.write_u24_be(offset)
-	writer.write_u16_be(character_data.size())
+func _on_fiesta_randomizer_request_create_patch(schema_key: String, jobs: Array[Job]) -> void:
+	var path: String = await _get_file_path()
 	
-	for byte in character_data:
-		writer.write_u8(byte)
-
-
-func _build_character_data(character: CharacterData) -> PackedByteArray:
-	var w: BinaryWriter = BinaryWriter.new()
+	if not path:
+		return
 	
-	w.write_u8(character.job)
-	w.write_u8(character.level)
+	if not schemas.has(schema_key):
+		push_error("Invalid key for PatchGenerator schemas.")
+		return
 	
-	w.write_u24_le(character.experience)
+	save_ips_file(path, schemas[schema_key], jobs)
 	
-	w.write_u16_le(character.current_hp)
-	w.write_u16_le(character.max_hp)
-	
-	w.write_u16_le(character.current_mp)
-	w.write_u16_le(character.max_mp)
-	
-	w.write_u8(character.helmet)
-	w.write_u8(character.armor)
-	w.write_u8(character.accessory)
-	w.write_u8(0x00)
-	
-	w.write_u8(character.shield)
-	w.write_u8(character.weapon_1)
-	w.write_u8(character.weapon_2)
-	w.write_u8(0xFF)
-	
-	w.write_u8(character.command_1)
-	w.write_u8(character.command_2)
-	w.write_u8(character.command_3)
-	w.write_u8(character.command_4)
-	
-	w.write_padding(0x00, 9)
-	
-	w.write_u8(character.weight)
-	
-	w.write_u8(character.strength)
-	w.write_u8(character.agility)
-	w.write_u8(character.stamina)
-	w.write_u8(character.magic)
-	
-	# Intentional duplication. Not sure why the ROM is like this.
-	w.write_u8(character.strength)
-	w.write_u8(character.agility)
-	w.write_u8(character.stamina)
-	w.write_u8(character.magic)
-	
-	w.write_u8(character.evasion)
-	w.write_u8(character.defense)
-	w.write_u8(character.magic_evasion)
-	w.write_u8(character.magic_defense)
-	
-	w.write_padding(0x00, 16)
-	
-	w.write_padding(0xFF, 4)
-	
-	w.write_u8(character.attack)
-	
-	return w.data
-	
-	
-func _apply_no_job_change(writer: BinaryWriter) -> void:
-	writer.write_u24_be(_no_job_change_offset)
-	writer.write_u16_be(0x02)
-	writer.write_u16_be(0x80DF)
+	patch_created.emit()

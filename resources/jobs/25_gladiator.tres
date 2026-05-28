@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="Job" format=3 uid="uid://428k727clcga"]
+
+[ext_resource type="Resource" uid="uid://cb5chjhgr4lg4" path="res://resources/armor_loadouts/leather_armor.tres" id="1_1087u"]
+[ext_resource type="Script" uid="uid://k84t6gc1wicp" path="res://scripts/character_armor.gd" id="2_ucbyf"]
+[ext_resource type="Script" uid="uid://btcpr4h1wb53m" path="res://scripts/command_loadout.gd" id="3_wtgkr"]
+[ext_resource type="Resource" uid="uid://b7x0pctwnkh7h" path="res://resources/commands/nothing.tres" id="4_n8utp"]
+[ext_resource type="Resource" uid="uid://dn333gi0iyb1l" path="res://resources/commands/finisher.tres" id="4_ucbyf"]
+[ext_resource type="Resource" uid="uid://td8ywh5urmbn" path="res://resources/commands/fight.tres" id="5_euu5i"]
+[ext_resource type="Resource" uid="uid://bbcelbjva5sc4" path="res://resources/commands/item.tres" id="6_uywa1"]
+[ext_resource type="Script" uid="uid://6hvcpweoehnf" path="res://scripts/job.gd" id="7_klkth"]
+[ext_resource type="Texture2D" uid="uid://bn7ys6b2qt3e2" path="res://sprites/characters/bartz/25.png" id="8_fsv2a"]
+[ext_resource type="Texture2D" uid="uid://cadc24xsi7uhc" path="res://sprites/characters/faris/25.png" id="9_xa26h"]
+[ext_resource type="Texture2D" uid="uid://c1ibrui7b0jdf" path="res://sprites/characters/galuf/25.png" id="10_27wio"]
+[ext_resource type="Texture2D" uid="uid://dhavards4nq3m" path="res://sprites/characters/krile/25.png" id="11_5bpms"]
+[ext_resource type="Texture2D" uid="uid://c6036htjc2i5f" path="res://sprites/characters/lenna/25.png" id="12_bfxdn"]
+[ext_resource type="Script" uid="uid://dhb15ko7vprgw" path="res://scripts/job_sprites.gd" id="13_d1hmq"]
+[ext_resource type="Script" uid="uid://b61ke1lic3no2" path="res://scripts/stat_bonuses.gd" id="14_gefwt"]
+[ext_resource type="Resource" uid="uid://cqb0d3svjieb0" path="res://resources/weapon_loadouts/broadsword.tres" id="15_ql511"]
+[ext_resource type="Resource" uid="uid://bw35125akpcs2" path="res://resources/weapon_loadouts/shield+dagger.tres" id="16_6wtrk"]
+[ext_resource type="Resource" uid="uid://da4wwmf1071yt" path="res://resources/weapon_loadouts/fists.tres" id="17_r8vrm"]
+[ext_resource type="Resource" uid="uid://4bnsex1qpues" path="res://resources/weapon_loadouts/knife.tres" id="18_wleyk"]
+[ext_resource type="Script" uid="uid://cwab5dbfpfmpu" path="res://scripts/character_weapons.gd" id="19_k2ha1"]
+
+[sub_resource type="Resource" id="Resource_01ljt"]
+script = ExtResource("2_ucbyf")
+bartz = ExtResource("1_1087u")
+lenna = ExtResource("1_1087u")
+galuf = ExtResource("1_1087u")
+faris = ExtResource("1_1087u")
+krile = ExtResource("1_1087u")
+metadata/_custom_type_script = "uid://k84t6gc1wicp"
+
+[sub_resource type="Resource" id="Resource_hsb27"]
+script = ExtResource("3_wtgkr")
+slot_1 = ExtResource("4_ucbyf")
+slot_2 = ExtResource("5_euu5i")
+slot_3 = ExtResource("4_n8utp")
+slot_4 = ExtResource("6_uywa1")
+metadata/_custom_type_script = "uid://btcpr4h1wb53m"
+
+[sub_resource type="Resource" id="Resource_f3rg0"]
+script = ExtResource("13_d1hmq")
+bartz = ExtResource("8_fsv2a")
+lenna = ExtResource("12_bfxdn")
+galuf = ExtResource("10_27wio")
+faris = ExtResource("9_xa26h")
+krile = ExtResource("11_5bpms")
+metadata/_custom_type_script = "uid://dhb15ko7vprgw"
+
+[sub_resource type="Resource" id="Resource_32d7j"]
+script = ExtResource("14_gefwt")
+strength = 50
+agility = 38
+stamina = 27
+magic = 10
+metadata/_custom_type_script = "uid://b61ke1lic3no2"
+
+[sub_resource type="Resource" id="Resource_csrg3"]
+script = ExtResource("19_k2ha1")
+bartz = ExtResource("15_ql511")
+lenna = ExtResource("18_wleyk")
+galuf = ExtResource("17_r8vrm")
+faris = ExtResource("16_6wtrk")
+krile = ExtResource("17_r8vrm")
+metadata/_custom_type_script = "uid://cwab5dbfpfmpu"
+
+[resource]
+script = ExtResource("7_klkth")
+id = 25
+gba_id = 23
+stats = SubResource("Resource_32d7j")
+sprites = SubResource("Resource_f3rg0")
+commands = SubResource("Resource_hsb27")
+weapons = SubResource("Resource_csrg3")
+armor = SubResource("Resource_01ljt")
+metadata/_custom_type_script = "uid://6hvcpweoehnf"

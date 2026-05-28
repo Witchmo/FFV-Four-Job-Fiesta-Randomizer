@@ -2,6 +2,7 @@ class_name CharacterData
 extends RefCounted
 
 var job: int
+var gba_job: int
 var level: int
 var experience: int
 var current_hp: int
@@ -32,6 +33,7 @@ var attack: int
 
 func _init(character: CharacterBase, job_data: Job) -> void:
 	job = job_data.id
+	gba_job = job_data.gba_id
 	level = character.level
 	experience = character.experience
 	

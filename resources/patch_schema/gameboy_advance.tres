@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GBAPatchSchema" format=3 uid="uid://b74bp1jvfk54o"]
+
+[ext_resource type="Script" uid="uid://ch3tx22kdbl6i" path="res://scripts/patch_schemas/gba_patch_schema.gd" id="1_40hgw"]
+
+[resource]
+script = ExtResource("1_40hgw")
+character_rom_offsets = Array[int]([1317161, 1317261, 1317361, 1317461])
+no_job_change_offset = 305747
+no_job_change_value = 57359
+no_job_change_length = 2
+metadata/_custom_type_script = "uid://ch3tx22kdbl6i"

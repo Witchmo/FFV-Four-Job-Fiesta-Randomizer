@@ -1,2 +1,2 @@
-res://scripts/job_set.gd
+res://scripts/job.gd
 Resource

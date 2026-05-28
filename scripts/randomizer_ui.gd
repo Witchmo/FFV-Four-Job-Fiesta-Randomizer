@@ -2,29 +2,31 @@ class_name RandomizerUI
 extends Control
 
 signal request_randomization(run_type_id: String, job_set_id: String, options: RandomizerOptions)
-signal request_create_patch
+signal request_create_patch(schema_key: String)
+signal job_changed(job: Job, character: CharacterBase.CharacterId)
 
 @export var job_spoiler: JobSpoiler
 @export var options_select: OptionsUI
 @export var create_patch_button: Button
 @export var run_type_button: OptionButton
 @export var job_set_button: OptionButton
+@export var schema_list: OptionButton
 @export var success_popup: PackedScene
+
+
+func _create_popup(text: String, text_color: Color, duration: int) -> void:
+	var popup: SuccessPopup = success_popup.instantiate()
+	
+	popup.set_data(text, text_color, duration)
+	add_child(popup)
 
 
 func _on_randomize_pressed() -> void:
 	request_randomization.emit(run_type_button.selected, job_set_button.selected, options_select.get_options())
 
 
-func _on_fiesta_randomizer_patch_created() -> void:
-	var popup: SuccessPopup = success_popup.instantiate()
-	
-	popup.set_data("SUCCESS", Color.GREEN, 60)
-	add_child(popup)
-
-
 func _on_create_patch_pressed() -> void:
-	request_create_patch.emit()
+	request_create_patch.emit(schema_list.text)
 
 
 func _on_job_selector_set_run_types(run_types: Array[RunType]) -> void:
@@ -43,7 +45,17 @@ func _on_job_selector_jobs_selected(jobs: Array[Job]) -> void:
 
 
 func _on_job_selector_selection_failed() -> void:
-	var popup: SuccessPopup = success_popup.instantiate()
-	
-	popup.set_data("SELECTION FAILED. PLEASE TRY AGAIN.", Color.RED, 180)
-	add_child(popup)
+	_create_popup("SELECTION FAILED. PLEASE TRY AGAIN.", Color.RED, 180)
+
+
+func _on_job_spoiler_job_changed(job: Job, character: CharacterBase.CharacterId) -> void:
+	job_changed.emit(job, character)
+	create_patch_button.disabled = false
+
+
+func _on_patch_generator_patch_created() -> void:
+	_create_popup("SUCCESS", Color.GREEN, 60)
+
+
+func _on_fiesta_randomizer_invalid_jobs() -> void:
+	_create_popup("INVALID JOBS FOR TARGET SYSTEM", Color.RED, 180)

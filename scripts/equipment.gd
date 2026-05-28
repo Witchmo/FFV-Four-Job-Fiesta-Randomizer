@@ -11,4 +11,4 @@ enum Stats {
 }
 
 @export var id: int
-@export var stat_mods: Array[int]
+@export_range(0, 255) var stat_mods: Array[int]

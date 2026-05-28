@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://iog6na1kojpk"]
 
 [ext_resource type="Script" uid="uid://b16oxvlnw7isx" path="res://scripts/fiesta_randomizer.gd" id="1_trceg"]
+[ext_resource type="Resource" uid="uid://c0msfa7ptcb1s" path="res://resources/jobs/21_freelancer.tres" id="2_og1vs"]
 [ext_resource type="Script" uid="uid://bdwwj7rrgt2u7" path="res://scripts/character_base.gd" id="8_gqmmt"]
 [ext_resource type="Resource" uid="uid://besajijudyu10" path="res://resources/characters/bartz.tres" id="9_yc10j"]
 [ext_resource type="Resource" uid="uid://duba4n3mp83nv" path="res://resources/characters/lenna.tres" id="10_jscy8"]
@@ -14,20 +15,25 @@
 [ext_resource type="Resource" uid="uid://blhq008pvf4cf" path="res://resources/run_types/typhoon.tres" id="18_y6deb"]
 [ext_resource type="Resource" uid="uid://dqta6kxt5m46g" path="res://resources/run_types/geyser.tres" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://c3bq1fytdsjf4" path="res://resources/run_types/sirocco.tres" id="20_2wyq8"]
+[ext_resource type="Resource" uid="uid://b8tqkivm0v6ty" path="res://resources/job_sets/advance_only.tres" id="21_fv21b"]
 [ext_resource type="Resource" uid="uid://c7lthldlhj4je" path="res://resources/run_types/volcano.tres" id="21_vxglm"]
 [ext_resource type="Resource" uid="uid://485jiv72a7u7" path="res://resources/run_types/meteor.tres" id="22_2f3dj"]
 [ext_resource type="Script" uid="uid://bytta6fp8cn5y" path="res://scripts/job_set.gd" id="23_yq6so"]
 [ext_resource type="Resource" uid="uid://cibcu601ut0ec" path="res://resources/job_sets/all_jobs.tres" id="24_fv21b"]
 [ext_resource type="Resource" uid="uid://egumfxbeqkxp" path="res://resources/job_sets/one_job_fiesta.tres" id="24_y6deb"]
 [ext_resource type="Resource" uid="uid://bfyqo8t2ohale" path="res://resources/job_sets/team_750.tres" id="25_tel4y"]
+[ext_resource type="Script" uid="uid://ca71kvsc5tclw" path="res://scripts/ips_generator.gd" id="26_2wyq8"]
 [ext_resource type="Resource" uid="uid://cvjmt2viw3v36" path="res://resources/job_sets/team_no_750.tres" id="26_qkpxi"]
+[ext_resource type="Script" uid="uid://ddsnvlpalnauk" path="res://scripts/patch_schemas/ips_patch_schema.gd" id="27_2f3dj"]
 [ext_resource type="Resource" uid="uid://dwq3gfxjqiyc0" path="res://resources/job_sets/team_375.tres" id="27_5q0nq"]
 [ext_resource type="Resource" uid="uid://43hsngoso5ve" path="res://resources/job_sets/classic_jobs.tres" id="28_dgi5k"]
+[ext_resource type="Resource" uid="uid://cgt2i6go8txsf" path="res://resources/patch_schema/super_famicom.tres" id="28_yq6so"]
 [ext_resource type="Resource" uid="uid://cm18camlho2v8" path="res://resources/job_sets/onion_jobs.tres" id="29_j8jky"]
+[ext_resource type="Resource" uid="uid://b74bp1jvfk54o" path="res://resources/patch_schema/gameboy_advance.tres" id="29_yq6so"]
 
 [node name="FiestaRandomizer" type="Node" unique_id=318480021]
 script = ExtResource("1_trceg")
-characters = Array[ExtResource("8_gqmmt")]([ExtResource("9_yc10j"), ExtResource("10_jscy8"), ExtResource("11_pm3ni"), ExtResource("12_y6deb")])
+freelancer = ExtResource("2_og1vs")
 
 [node name="GUI" parent="." unique_id=1106996359 instance=ExtResource("13_og1vs")]
 
@@ -38,9 +44,19 @@ ui_root = NodePath("../GUI")
 [node name="JobSelector" type="Node" parent="." unique_id=1116743941]
 script = ExtResource("15_jkv2x")
 run_types = Array[ExtResource("16_jscy8")]([ExtResource("17_pm3ni"), ExtResource("18_y6deb"), ExtResource("19_og1vs"), ExtResource("20_2wyq8"), ExtResource("21_vxglm"), ExtResource("22_2f3dj")])
-job_sets = Array[ExtResource("23_yq6so")]([ExtResource("24_fv21b"), ExtResource("25_tel4y"), ExtResource("26_qkpxi"), ExtResource("27_5q0nq"), ExtResource("28_dgi5k"), ExtResource("29_j8jky"), ExtResource("24_y6deb")])
+job_sets = Array[ExtResource("23_yq6so")]([ExtResource("24_fv21b"), ExtResource("25_tel4y"), ExtResource("26_qkpxi"), ExtResource("27_5q0nq"), ExtResource("28_dgi5k"), ExtResource("29_j8jky"), ExtResource("24_y6deb"), ExtResource("21_fv21b")])
 
-[connection signal="patch_created" from="." to="GUI" method="_on_fiesta_randomizer_patch_created"]
+[node name="PatchGenerator" type="Node" parent="." unique_id=1933579413]
+script = ExtResource("26_2wyq8")
+characters = Array[ExtResource("8_gqmmt")]([ExtResource("9_yc10j"), ExtResource("10_jscy8"), ExtResource("11_pm3ni"), ExtResource("12_y6deb")])
+schemas = Dictionary[String, ExtResource("27_2f3dj")]({
+"GAMEBOY ADVANCE": ExtResource("29_yq6so"),
+"SUPER FAMICOM": ExtResource("28_yq6so")
+})
+
+[connection signal="invalid_jobs" from="." to="GUI" method="_on_fiesta_randomizer_invalid_jobs"]
+[connection signal="request_create_patch" from="." to="PatchGenerator" method="_on_fiesta_randomizer_request_create_patch"]
+[connection signal="job_changed" from="GUI" to="." method="_on_gui_job_changed"]
 [connection signal="request_create_patch" from="GUI" to="." method="_on_gui_request_create_patch"]
 [connection signal="request_randomization" from="GUI" to="JobSelector" method="_on_gui_request_randomization"]
 [connection signal="jobs_selected" from="JobSelector" to="." method="_on_job_selector_jobs_selected"]
@@ -48,3 +64,4 @@ job_sets = Array[ExtResource("23_yq6so")]([ExtResource("24_fv21b"), ExtResource(
 [connection signal="selection_failed" from="JobSelector" to="GUI" method="_on_job_selector_selection_failed"]
 [connection signal="set_job_sets" from="JobSelector" to="GUI" method="_on_job_selector_set_job_sets"]
 [connection signal="set_run_types" from="JobSelector" to="GUI" method="_on_job_selector_set_run_types"]
+[connection signal="patch_created" from="PatchGenerator" to="GUI" method="_on_patch_generator_patch_created"]

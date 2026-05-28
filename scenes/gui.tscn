@@ -4,15 +4,26 @@
 [ext_resource type="Theme" uid="uid://d320cc11vt4ny" path="res://themes/main_theme.tres" id="2_e23it"]
 [ext_resource type="PackedScene" uid="uid://mak5dja3lo42" path="res://scenes/success_popup.tscn" id="2_xqxrh"]
 [ext_resource type="Script" uid="uid://djawxu5pl152e" path="res://scripts/options_ui.gd" id="3_hl6be"]
+[ext_resource type="Shader" uid="uid://ckq6jlg1yb17h" path="res://shaders/wave.gdshader" id="3_xqxrh"]
 [ext_resource type="Script" uid="uid://b1c3gwlviofwg" path="res://scripts/job_spoiler.gd" id="4_sbet0"]
 [ext_resource type="Texture2D" uid="uid://bkiwqb51urn8m" path="res://sprites/gui/background.png" id="5_bglms"]
 [ext_resource type="Texture2D" uid="uid://celrqsb7vu6r5" path="res://sprites/characters/bartz/00.png" id="5_k81xp"]
 [ext_resource type="Texture2D" uid="uid://cwxgdi7ns67c7" path="res://sprites/characters/lenna/00.png" id="6_78ls4"]
 [ext_resource type="Texture2D" uid="uid://c5y2t5exmm03n" path="res://sprites/characters/galuf/00.png" id="7_ia15a"]
 [ext_resource type="Texture2D" uid="uid://iy62t0337up2" path="res://sprites/characters/faris/01.png" id="8_nf4fc"]
+[ext_resource type="Script" uid="uid://cjgswrslpiqx8" path="res://scripts/character_button.gd" id="9_qupqx"]
 [ext_resource type="Texture2D" uid="uid://i0w0brtejhh3" path="res://sprites/characters/krile/00.png" id="9_vwnqe"]
+[ext_resource type="Resource" uid="uid://bi3o3ibxdb7h7" path="res://resources/job_lists/all_jobs_freelancer.tres" id="10_jw8q3"]
+[ext_resource type="Script" uid="uid://dm8dhtx6ds1hd" path="res://scripts/characteer_texture.gd" id="14_jw8q3"]
 
-[node name="GUI" type="Control" unique_id=1106996359 node_paths=PackedStringArray("job_spoiler", "options_select", "create_patch_button", "run_type_button", "job_set_button")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qupqx"]
+shader = ExtResource("3_xqxrh")
+shader_parameter/amplitude_px = 3.0000000298024
+shader_parameter/frequency = 0.3499999921768
+shader_parameter/speed = 1.999999955296
+shader_parameter/line_height = 1.0
+
+[node name="GUI" type="Control" unique_id=1106996359 node_paths=PackedStringArray("job_spoiler", "options_select", "create_patch_button", "run_type_button", "job_set_button", "schema_list")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,9 +36,11 @@ options_select = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxCo
 create_patch_button = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/CreatePatch")
 run_type_button = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/RunTypeOptionButton")
 job_set_button = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/JobSetsOptionButton")
+schema_list = NodePath("MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/PatchSchemaList")
 success_popup = ExtResource("2_xqxrh")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1004446734]
+material = SubResource("ShaderMaterial_qupqx")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -115,7 +128,7 @@ layout_mode = 2
 [node name="OptionsLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=1404512377]
 layout_mode = 2
 theme = ExtResource("2_e23it")
-text = "OPTIONS"
+text = "MODIFIERS"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer" unique_id=1682697082]
 layout_mode = 2
@@ -132,10 +145,27 @@ flat = true
 [node name="IsIncludeFreelancerCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=143666990]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "INCLUDES THE FREELANCER INTO THE RANDOM JOB POOL"
+tooltip_text = "INCLUDES THE FREELANCER IN THE JOB SELECTION POOL"
 focus_mode = 0
 theme = ExtResource("2_e23it")
 text = "INCLUDE FREELANCER"
+flat = true
+
+[node name="IsBerserkerRiskCheckBox" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1306945439]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "ADDS A BERSERKER TO EACH JOB SELECTION ROLL"
+focus_mode = 0
+text = "BERSERKER RISK"
+flat = true
+
+[node name="IncludeAdvanceJobs" type="CheckBox" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/VBoxContainer/Options/MarginContainer/VBoxContainer/VBoxContainer" unique_id=2019050697]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "ADDS A JOB FROM FFV ADVANCE TO EACH SELECTION ROLL. 
+THESE JOBS CANNOT BE USED WITH A SUPER FAMICOM PATCH"
+focus_mode = 0
+text = "INCLUDE ADVANCE JOBS"
 flat = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=420073599]
@@ -144,16 +174,16 @@ layout_mode = 2
 theme = ExtResource("2_e23it")
 
 [node name="JobSpoiler" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=396174227 node_paths=PackedStringArray("container", "bartz", "lenna", "galuf", "faris", "krile")]
-custom_minimum_size = Vector2(248, 68)
+custom_minimum_size = Vector2(248, 70)
 layout_mode = 2
 size_flags_vertical = 0
 script = ExtResource("4_sbet0")
 container = NodePath("MarginContainer")
-bartz = NodePath("MarginContainer/HBoxContainer/Bartz/TextureRect")
-lenna = NodePath("MarginContainer/HBoxContainer/Lenna/TextureRect")
-galuf = NodePath("MarginContainer/HBoxContainer/Galuf/TextureRect")
-faris = NodePath("MarginContainer/HBoxContainer/Faris/TextureRect")
-krile = NodePath("MarginContainer/HBoxContainer/Krile/TextureRect")
+bartz = NodePath("MarginContainer/HBoxContainer/Bartz/BartzCharacterButton")
+lenna = NodePath("MarginContainer/HBoxContainer/Lenna/LennaCharacterButton")
+galuf = NodePath("MarginContainer/HBoxContainer/Galuf/GalufCharacterButton")
+faris = NodePath("MarginContainer/HBoxContainer/Faris/FarisCharacterButton")
+krile = NodePath("MarginContainer/HBoxContainer/Krile/KrileTextureRect")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" unique_id=944746798]
 visible = false
@@ -174,11 +204,15 @@ layout_mode = 2
 theme = ExtResource("2_e23it")
 text = "BARTZ"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz" unique_id=1768141527]
+[node name="BartzCharacterButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz" unique_id=896022478]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = ExtResource("5_k81xp")
+icon = ExtResource("5_k81xp")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("9_qupqx")
+job_list = ExtResource("10_jw8q3")
 
 [node name="Lenna" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=14616424]
 layout_mode = 2
@@ -189,10 +223,15 @@ layout_mode = 2
 theme = ExtResource("2_e23it")
 text = "LENNA"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna" unique_id=1619529086]
+[node name="LennaCharacterButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna" unique_id=1555459735]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("6_78ls4")
+icon = ExtResource("6_78ls4")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("9_qupqx")
+job_list = ExtResource("10_jw8q3")
+character = 1
 
 [node name="Galuf" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=961160910]
 layout_mode = 2
@@ -203,10 +242,15 @@ layout_mode = 2
 theme = ExtResource("2_e23it")
 text = "GALUF"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf" unique_id=212282339]
+[node name="GalufCharacterButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf" unique_id=828065090]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("7_ia15a")
+icon = ExtResource("7_ia15a")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("9_qupqx")
+job_list = ExtResource("10_jw8q3")
+character = 2
 
 [node name="Faris" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=1813135123]
 layout_mode = 2
@@ -217,10 +261,16 @@ layout_mode = 2
 theme = ExtResource("2_e23it")
 text = "FARIS"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris" unique_id=733142974]
+[node name="FarisCharacterButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris" unique_id=1429146134]
 layout_mode = 2
-size_flags_horizontal = 4
-texture = ExtResource("8_nf4fc")
+size_flags_vertical = 0
+icon = ExtResource("8_nf4fc")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("9_qupqx")
+job_list = ExtResource("10_jw8q3")
+character = 3
 
 [node name="Krile" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer" unique_id=1612094944]
 layout_mode = 2
@@ -231,17 +281,48 @@ layout_mode = 2
 theme = ExtResource("2_e23it")
 text = "KRILE"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Krile" unique_id=896865963]
+[node name="KrileTextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Krile" unique_id=584627912]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 texture = ExtResource("9_vwnqe")
+stretch_mode = 2
+script = ExtResource("14_jw8q3")
+character_id = 4
 
-[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=397312413]
+[node name="SpoilerToggle" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=397312413]
 custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 size_flags_horizontal = 8
 focus_mode = 0
 text = "TOGGLE SPOILER"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=240460254]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer" unique_id=33538245]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer" unique_id=459583970]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+
+[node name="TargetSystemLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=457501349]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+text = "TARGET SYSTEM"
+
+[node name="PatchSchemaList" type="OptionButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" unique_id=1764354673]
+layout_mode = 2
+theme = ExtResource("2_e23it")
+selected = 0
+item_count = 2
+popup/item_0/text = "SUPER FAMICOM"
+popup/item_0/id = 0
+popup/item_1/text = "GAMEBOY ADVANCE"
+popup/item_1/id = 1
 
 [node name="Process" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1477509558]
 layout_mode = 2
@@ -273,6 +354,24 @@ theme = ExtResource("2_e23it")
 disabled = true
 text = "CREATE PATCH"
 
-[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Button" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_button_pressed"]
+[connection signal="job_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" to="." method="_on_job_spoiler_job_changed"]
+[connection signal="gui_input" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz/BartzCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz/BartzCharacterButton" method="_on_gui_input"]
+[connection signal="job_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz/BartzCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_character_button_job_changed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz/BartzCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz/BartzCharacterButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz/BartzCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Bartz/BartzCharacterButton" method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna/LennaCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna/LennaCharacterButton" method="_on_gui_input"]
+[connection signal="job_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna/LennaCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_character_button_job_changed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna/LennaCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna/LennaCharacterButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna/LennaCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Lenna/LennaCharacterButton" method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf/GalufCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf/GalufCharacterButton" method="_on_gui_input"]
+[connection signal="job_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf/GalufCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_character_button_job_changed"]
+[connection signal="job_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf/GalufCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Krile/KrileTextureRect" method="_on_galuf_character_button_job_changed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf/GalufCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf/GalufCharacterButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf/GalufCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Galuf/GalufCharacterButton" method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris/FarisCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris/FarisCharacterButton" method="_on_gui_input"]
+[connection signal="job_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris/FarisCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_character_button_job_changed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris/FarisCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris/FarisCharacterButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris/FarisCharacterButton" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler/MarginContainer/HBoxContainer/Faris/FarisCharacterButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/SpoilerToggle" to="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/JobSpoiler" method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/Randomize" to="." method="_on_randomize_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Process/MarginContainer/HBoxContainer/CreatePatch" to="." method="_on_create_patch_pressed"]

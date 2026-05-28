@@ -67,6 +67,7 @@ metadata/_custom_type_script = "uid://cwab5dbfpfmpu"
 [resource]
 script = ExtResource("8_6da1o")
 id = 20
+gba_id = 24
 stats = SubResource("Resource_j28pt")
 sprites = SubResource("Resource_5vxha")
 commands = SubResource("Resource_56u8h")
