@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://cjgswrslpiqx8" path="res://scripts/character_button.gd" id="9_qupqx"]
 [ext_resource type="Texture2D" uid="uid://i0w0brtejhh3" path="res://sprites/characters/krile/00.png" id="9_vwnqe"]
 [ext_resource type="Resource" uid="uid://bi3o3ibxdb7h7" path="res://resources/job_lists/all_jobs_freelancer.tres" id="10_jw8q3"]
-[ext_resource type="Script" uid="uid://dm8dhtx6ds1hd" path="res://scripts/characteer_texture.gd" id="14_jw8q3"]
+[ext_resource type="Script" uid="uid://dm8dhtx6ds1hd" path="res://scripts/character_texture.gd" id="14_jw8q3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qupqx"]
 shader = ExtResource("3_xqxrh")

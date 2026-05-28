@@ -1,4 +1,3 @@
-res://scripts/randomizer_ui.gd
 res://scenes/main.tscn
 res://resources/jobs/21_freelancer.tres
 res://resources/characters/bartz.tres
@@ -6,6 +5,10 @@ res://resources/characters/lenna.tres
 res://resources/characters/galuf.tres
 res://resources/characters/faris.tres
 res://resources/jobs/06_berserker.tres
+res://resources/jobs/22_necromancer.tres
+res://resources/jobs/23_oracle.tres
+res://resources/jobs/24_cannoneer.tres
+res://resources/jobs/25_gladiator.tres
 res://themes/main_theme.tres
 res://shaders/wave.gdshader
 res://resources/jobs/00_knight.tres
@@ -28,11 +31,8 @@ res://resources/jobs/17_geomancer.tres
 res://resources/jobs/18_bard.tres
 res://resources/jobs/19_dancer.tres
 res://resources/jobs/20_mime.tres
-res://resources/jobs/22_necromancer.tres
-res://resources/jobs/23_oracle.tres
-res://resources/jobs/24_cannoneer.tres
-res://resources/jobs/25_gladiator.tres
 res://resources/run_types/regular.tres
+res://resources/job_sets/advance_only.tres
 res://resources/job_sets/all_jobs.tres
 res://resources/job_sets/one_job_fiesta.tres
 res://resources/job_sets/team_750.tres
@@ -40,16 +40,3 @@ res://resources/job_sets/team_no_750.tres
 res://resources/job_sets/team_375.tres
 res://resources/job_sets/classic_jobs.tres
 res://resources/job_sets/onion_jobs.tres
-res://scenes/gui.tscn
-res://scripts/options_ui.gd
-res://scripts/randomizer_options.gd
-res://scripts/pool_modifiers/add_advance_jobs.gd
-res://scripts/selection_context.gd
-res://scripts/character_button.gd
-res://scripts/rule_validator.gd
-res://resources/patch_schema/gameboy_advance.tres
-res://scripts/fiesta_randomizer.gd
-res://scripts/job.gd
-res://resources/equipment/broadsword.tres
-res://scripts/equipment.gd
-res://scripts/job_sprites.gd

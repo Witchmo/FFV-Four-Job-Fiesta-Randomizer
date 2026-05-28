@@ -31,8 +31,8 @@ metadata/_custom_type_script = "uid://k84t6gc1wicp"
 
 [sub_resource type="Resource" id="Resource_h0huf"]
 script = ExtResource("3_3oysu")
-slot_1 = ExtResource("4_i5s1g")
-slot_2 = ExtResource("5_4arwu")
+slot_1 = ExtResource("5_4arwu")
+slot_2 = ExtResource("4_i5s1g")
 slot_3 = ExtResource("6_6iyo0")
 slot_4 = ExtResource("7_ttfsw")
 metadata/_custom_type_script = "uid://btcpr4h1wb53m"
