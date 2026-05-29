@@ -21,3 +21,8 @@ Compatilibility:
 The patch expects an unheadered ROM. This should be fully compatible with most ROM hacks, although it doesn't take into account any balance changes. If another hack has modified job stat modifiers or equipment, the patch will ignore them when initially calculating character stats but is otherwise compatible.
 
 Obviously, don't apply a GBA patch to the Super Famicom version and vice versa.
+
+
+Known issues:
+
+The Necromancer doesn't start with any spells available. This is a result of needing to actually unlock the Necromancer naturally, since the spell acquisition is bundled in with the job unlock.
